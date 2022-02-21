@@ -5,18 +5,20 @@
 ## Makefile
 ##
 
-SRC			=	
+SRC			=	src/button.c	\
+				src/window.c	\
 
 CRITERION	=	$(wildcard tests/*.c)
 
 OBJ			=	$(SRC:.c=.o)
 
 NAME		=	my_project
-
-CFLAGS		+=	-W -Wall -Wextra -Werror -Wshadow -Wimplicit -pedantic
+#-Werror
+CFLAGS		+=	-W -Wall -Wextra  -Wshadow -Wimplicit -pedantic
 
 LDFLAGS		+=	-L./lib -lutils
 LDFLAGS		+=	-L./lib -llinkedlist
+LDFLAGS		+=	-lcsfml-graphics -lcsfml-system  -lcsfml-audio
 
 CPPFLAGS	+=	-I./include/
 CPPFLAGS	+=	-g

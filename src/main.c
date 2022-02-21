@@ -6,10 +6,11 @@
 */
 
 #include <stddef.h>
+#include "my_project.h"
 
 int main(int argc, char **argv, char **env)
 {
     if (*env == NULL)
         return 84;
-    return 0;
+    return main_window();
 }
