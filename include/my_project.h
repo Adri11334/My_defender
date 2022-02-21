@@ -26,10 +26,17 @@
         sfRectangleShape *rect;
         colors_t *colors;
         dimension_t *dimension;
+        sfText *text;
+        void (*onClick);
     } button_t;
 
     int main_window(void);
-    button_t *init_button(sfVector2f position, \
-    sfVector2f size, colors_t color);
+    button_t *init_button(dimension_t dimension, colors_t color, \
+    char *content, void *onClick);
+    void print_hello(void);
+    float absolutes(float nb);
+    int mouse_click_detected(sfMouseButtonEvent event, button_t *button);
+    int button_is_clicked(sfMouseButtonEvent event, button_t *button, \
+    dimension_t dimension);
 
 #endif /* !MY_PROJECT_H_ */
