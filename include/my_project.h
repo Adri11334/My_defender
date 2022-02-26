@@ -36,7 +36,6 @@
     void print_hello(void);
     float absolutes(float nb);
     int mouse_click_detected(sfMouseButtonEvent event, button_t *button);
-    int button_is_clicked(sfMouseButtonEvent event, button_t *button, \
-    dimension_t dimension);
+    int button_is_clicked(sfMouseButtonEvent event, button_t *button);
 
 #endif /* !MY_PROJECT_H_ */
