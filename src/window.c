@@ -14,10 +14,10 @@ int main_window(void)
     sfVideoMode mode = {800, 600, 32};
     sfRenderWindow *window;
     sfEvent event;
-    dimension_t *button_dim = create_dimension(150, 50, 100, 100);
-    colors_t *button_colors = create_color_group(sfRed, sfBlue, sfGreen);
-    char *my_button_text = my_malloc(10, "My button");
-    button_t *button = init_button(button_dim, button_colors, my_button_text, NULL);
+    dimension_t *button_dim = dimension_create(150, 50, 100, 100);
+    sfText *button_text = text_create("My button", ROBOTO_REGULAR, 20, button_dim);
+    colors_t *button_colors = color_group_create(sfRed, sfBlue, sfGreen);
+    button_t *button = button_create(button_dim, button_colors, button_text, NULL);
 
     window = sfRenderWindow_create(mode, "trop fort enfaite", sfClose, NULL);
     if (!window)
@@ -30,7 +30,7 @@ int main_window(void)
                 button_is_clicked(event.mouseButton, button);
         }
         sfRenderWindow_clear(window, sfBlack);
-        display_button(window, button);
+        button_display(window, button);
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);

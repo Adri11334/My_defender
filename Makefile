@@ -5,8 +5,11 @@
 ## Makefile
 ##
 
-SRC			=	src/button.c	\
-				src/window.c	\
+SRC			=	src/button/button_detection.c	\
+				src/button/button_init.c		\
+				src/display/display_button.c	\
+				src/text/text_init.c			\
+				src/window.c					\
 
 CRITERION	=	$(wildcard tests/*.c)
 

@@ -11,6 +11,18 @@
     #include <SFML/Audio.h>
     #include "my.h"
 
+    #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
+
+    typedef enum font_e {
+        ROBOTO_LIGHT,
+        ROBOTO_ITALIC,
+        ROBOTO_THIN,
+        ROBOTO_REGULAR,
+        ROBOTO_NORMAL,
+        ROBOTO_MEDIUM,
+        ROBOTO_BOLD,
+    } font_t;
+
     typedef struct colors_s {
         sfColor normal;
         sfColor highlight;
@@ -31,14 +43,17 @@
     } button_t;
 
     int main_window(void);
-    colors_t *create_color_group(sfColor normal, \
+    colors_t *color_group_create(sfColor normal, \
     sfColor highlight, sfColor disable);
-    dimension_t *create_dimension(float sizex, float sizey, \
+    dimension_t *dimension_create(float sizex, float sizey, \
     float positionx, float positiony);
-    button_t *init_button(dimension_t *dimension, colors_t *color, \
-    char *content, void *onClick);
-    void display_button(sfRenderWindow *window, button_t *button);
-    float absolutes(float nb);
+    button_t *button_create(dimension_t *dimension, colors_t *color, \
+    sfText *content, void *onClick);
+    void button_display(sfRenderWindow *window, button_t *button);
+
+    sfText *text_create(char *content, font_t font_wanted, int size, \
+    dimension_t *parent_dimensions);
+
     int mouse_click_detected(sfMouseButtonEvent event, button_t *button);
     int button_is_clicked(sfMouseButtonEvent event, button_t *button);
 
