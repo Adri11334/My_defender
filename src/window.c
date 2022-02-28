@@ -34,5 +34,6 @@ int main_window(void)
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);
+    button_destroy(button);
     return 0;
 }

@@ -9,39 +9,6 @@
 
 #include "my_project.h"
 
-colors_t *color_group_create(sfColor normal, \
-sfColor highlight, sfColor disable)
-{
-    colors_t *colors = malloc(sizeof(colors_t));
-
-    if (colors == NULL)
-        return NULL;
-    colors->normal = normal;
-    colors->highlight = highlight;
-    colors->disable = disable;
-    return colors;
-}
-
-dimension_t *dimension_create(float sizex, float sizey, \
-float positionx, float positiony)
-{
-    dimension_t *dimension = malloc(sizeof(dimension_t));
-
-    if (dimension == NULL)
-        return NULL;
-    dimension->size = malloc(sizeof(sfVector2f));
-    if (dimension->size == NULL)
-        return NULL;
-    dimension->size->x = sizex;
-    dimension->size->y = sizey;
-    dimension->position = malloc(sizeof(sfVector2f));
-    if (dimension->position == NULL)
-        return NULL;
-    dimension->position->x = positionx;
-    dimension->position->y = positiony;
-    return dimension;
-}
-
 button_t *button_create(dimension_t *dimension, colors_t *color,
 sfText *content, void *onClick)
 {

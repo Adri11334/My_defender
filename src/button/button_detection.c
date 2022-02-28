@@ -5,8 +5,6 @@
 ** button_detection
 */
 
-#include <stdlib.h>
-
 #include "my_project.h"
 
 int button_clicked_detection(sfMouseButtonEvent event, button_t *button)
