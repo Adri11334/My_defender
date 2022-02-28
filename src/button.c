@@ -48,6 +48,7 @@ char *content, void *onClick)
     button_t *button = my_malloc(sizeof(button_t), NULL);
     sfText *text = sfText_create();
     sfFont *font = sfFont_createFromFile("assets/fonts/Roboto-Regular.ttf");
+    sfVector2f text_position;
 
     if (button == NULL || text == NULL || font == NULL
     || dimension == NULL || color == NULL)
@@ -60,11 +61,14 @@ char *content, void *onClick)
     sfRectangleShape_setFillColor(button->rect, color->normal);
     sfRectangleShape_setPosition(button->rect, *dimension->position);
     sfRectangleShape_setSize(button->rect, *dimension->size);
-    sfText_setPosition(text, *dimension->position);
-    sfText_setCharacterSize(text, 20);
-    sfText_setFont(text, font);
-    if (content != NULL)
+    if (content != NULL) {
+        text_position.x = (((dimension->size->x) / 2) + (dimension->position->x)) - ((my_strlen(content) * 10) / 2);
+        text_position.y = ((dimension->size->y / 2) + (dimension->position->y)) - 10;
+        sfText_setPosition(text, text_position);
+        sfText_setCharacterSize(text, 20);
+        sfText_setFont(text, font);
         sfText_setString(text, content);
+    }
     button->text = text;
     return button;
 }
