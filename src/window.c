@@ -6,8 +6,10 @@
 */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 #include "my_project.h"
+
 
 button_t *button_one_create()
 {

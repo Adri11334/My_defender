@@ -12,8 +12,8 @@
 void button_destroy(button_t *button)
 {
     sfRectangleShape_destroy(button->rect);
-    color_group_destroy(button->colors);
     dimension_destroy(button->dimension);
     text_destroy(button->text);
+    free(button->colors);
     free(button);
 }

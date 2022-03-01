@@ -13,7 +13,6 @@ SRC			=	src/button/button_destroy.c			\
 				src/display/display_button.c		\
 				src/text/text_destroy.c				\
 				src/text/text_init.c				\
-				src/utils/colors.c					\
 				src/utils/dimension.c				\
 				src/window.c						\
 
