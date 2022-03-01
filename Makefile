@@ -20,7 +20,7 @@ CRITERION	=	$(wildcard tests/*.c)
 
 OBJ			=	$(SRC:.c=.o)
 
-NAME		=	my_project
+NAME		=	my_defender
 #-Werror
 CFLAGS		+=	-W -Wall -Wextra  -Wshadow -Wimplicit -pedantic
 
