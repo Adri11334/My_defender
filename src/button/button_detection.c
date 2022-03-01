@@ -28,7 +28,7 @@ int button_clicked_detection(sfMouseButtonEvent event, button_t *button)
 int button_is_clicked(sfMouseButtonEvent event, button_t *button)
 {
     if (button_clicked_detection(event, button) == 1) {
-        write_green("Button is clicked\n");
+        button->onClick();
         return 1;
     } else
         return 0;

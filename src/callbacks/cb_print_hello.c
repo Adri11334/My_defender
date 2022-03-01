@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2022
 ** defender
 ** File description:
-** text_destroy
+** cb_print_hello
 */
 
 #include "my_project.h"
 
-void text_destroy(sfText *text)
+void print_hello()
 {
-    sfText_destroy(text);
+    my_printf("Hello\n");
 }

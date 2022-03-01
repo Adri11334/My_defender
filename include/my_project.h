@@ -39,7 +39,7 @@
         colors_t *colors;
         dimension_t *dimension;
         sfText *text;
-        void (*onClick);
+        void (*onClick) (void);
     } button_t;
 
     int main_window(void);
@@ -63,4 +63,6 @@
     int mouse_click_detected(sfMouseButtonEvent event, button_t *button);
     int button_is_clicked(sfMouseButtonEvent event, button_t *button);
 
+
+    void print_hello();
 #endif /* !MY_PROJECT_H_ */
