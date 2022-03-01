@@ -1,0 +1,27 @@
+############
+#          #
+# x----/   #
+#      |   #
+#      /-o #
+#          #
+############
+1 222 11 122121 112
+
+Number of blocks
+x: 12(.8)
+y: 7(.2)
+
+screen dimension:
+1920 / 1080 (16/9)
+
+' ' = empty point
+'x' = ennemy's start point
+'o' = objectif to defend
+'-' = horizontal road
+'|' = vertical road
+'/' = cross road
+
+last line should be ennemy spawn order, (1) second between each enney
+'1' = ennemy id of 1
+'2' = ennemy id of 2
+...

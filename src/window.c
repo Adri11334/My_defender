@@ -24,24 +24,26 @@ button_t *button_one_create()
     button_colors->highlight = sfYellow;
     button_colors->clicked = sfCyan;
     button_colors->disable = sfBlue;
-    button_dim = dimension_create(150, 50, 100, 100);
+    button_dim = dimension_create(150, 150, 150, 150);
     button_text = text_create("My button", ROBOTO_REGULAR, 20, button_dim);
     return button_create(button_dim, button_colors, button_text, &print_hello);
 }
 
 int main_window(void)
 {
-    sfVideoMode mode = {800, 600, 32};
+    sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow *window;
     sfEvent event;
     button_t *button = button_one_create();
 
-    window = sfRenderWindow_create(mode, "trop fort enfaite", sfClose, NULL);
+    window = sfRenderWindow_create(mode, "trop fort enfaite", sfFullscreen, NULL);
     if (!window)
         return 84;
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
             if (event.type == sfEvtClosed)
+                sfRenderWindow_close(window);
+            if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ)
                 sfRenderWindow_close(window);
         }
         sfRenderWindow_clear(window, sfBlack);
