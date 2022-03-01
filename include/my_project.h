@@ -23,11 +23,21 @@
         ROBOTO_BOLD,
     } font_t;
 
-    typedef struct colors_s {
+    typedef struct button_colors_s {
         sfColor normal;
+        sfColor idle;
         sfColor highlight;
+        sfColor clicked;
         sfColor disable;
-    } colors_t;
+    } button_colors_t;
+
+    typedef enum button_status_e {
+        ACTIVE,
+        IDLE,
+        HIGHLIGHT,
+        CLICKED,
+        DISABLED,
+    } button_status_t;
 
     typedef struct dimension_s {
         sfVector2f *size;
@@ -35,23 +45,21 @@
     } dimension_t;
 
     typedef struct button_s {
+        button_status_t status;
         sfRectangleShape *rect;
-        colors_t *colors;
+        button_colors_t *colors;
         dimension_t *dimension;
         sfText *text;
         void (*onClick) (void);
     } button_t;
 
     int main_window(void);
-    colors_t *color_group_create(sfColor normal, \
-    sfColor highlight, sfColor disable);
-    void color_group_destroy(colors_t *colors);
 
     dimension_t *dimension_create(float sizex, float sizey, \
     float positionx, float positiony);
     void dimension_destroy(dimension_t *dimension);
 
-    button_t *button_create(dimension_t *dimension, colors_t *color, \
+    button_t *button_create(dimension_t *dimension, button_colors_t *color, \
     sfText *content, void *onClick);
     void button_display(sfRenderWindow *window, button_t *button);
     void button_destroy(button_t *button);
@@ -60,8 +68,9 @@
     dimension_t *parent_dimensions);
     void text_destroy(sfText *text);
 
-    int mouse_click_detected(sfMouseButtonEvent event, button_t *button);
-    int button_is_clicked(sfMouseButtonEvent event, button_t *button);
+    int button_hover_detection(sfVector2i mouse_position, button_t *button);
+    int button_is_hover(sfRenderWindow *window, sfEvent *event, \
+    button_t *button);
 
 
     void print_hello();

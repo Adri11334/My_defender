@@ -6,8 +6,9 @@
 ##
 
 SRC			=	src/button/button_destroy.c			\
-				src/button/button_detection.c		\
+				src/button/button_clic_detection.c	\
 				src/button/button_init.c			\
+				src/button/button_interactions.c	\
 				src/callbacks/cb_print_hello.c		\
 				src/display/display_button.c		\
 				src/text/text_destroy.c				\

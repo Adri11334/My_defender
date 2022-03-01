@@ -9,7 +9,7 @@
 
 #include "my_project.h"
 
-button_t *button_create(dimension_t *dimension, colors_t *color,
+button_t *button_create(dimension_t *dimension, button_colors_t *color,
 sfText *content, void *onClick)
 {
     button_t *button = my_malloc(sizeof(button_t), NULL);
@@ -21,6 +21,7 @@ sfText *content, void *onClick)
         return NULL;
     button->colors = color;
     button->onClick = onClick;
+    button->status = ACTIVE;
     button->dimension = dimension;
     sfRectangleShape_setFillColor(button->rect, color->normal);
     sfRectangleShape_setPosition(button->rect, *dimension->position);
