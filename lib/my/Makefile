@@ -6,6 +6,7 @@
 ##
 
 SRC		=	utils/my_compute_power_rec.c	\
+			utils/my_charcmp.c				\
 			utils/my_compute_square_root.c	\
 			utils/my_get_file.c				\
 			utils/my_find_prime_sup.c		\

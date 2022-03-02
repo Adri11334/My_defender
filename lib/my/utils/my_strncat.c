@@ -11,7 +11,7 @@
 
 char *my_strncat(char *dest, char const *src, int nb)
 {
-    int index_dest  = 0;
+    int index_dest = 0;
     int index_src = 0;
 
     if (dest == NULL || src == NULL)

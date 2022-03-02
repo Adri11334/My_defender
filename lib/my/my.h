@@ -47,6 +47,7 @@
     char *my_revstr(char *str);
     char *my_strstr(char *str, char const *to_find);
     char **my_str_to_words_array(const char *str, const char separators[]);
+    int my_charcmp(char to_compare, char comparator);
 
     int get_first_line_length(char *text);
     char *my_get_first_line(char *text);

@@ -6,7 +6,7 @@
 */
 
 #ifndef LINKED_LISTS_H_
-#define LINKED_LISTS_H_
+    #define LINKED_LISTS_H_
     #include <stddef.h>
 
     typedef struct node_s {

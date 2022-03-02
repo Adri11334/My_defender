@@ -3,6 +3,7 @@
         "my_project.h": "c",
         "my_enum.h": "c",
         "my_struct.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stddef.h": "c"
     }
 }

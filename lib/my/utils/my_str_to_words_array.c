@@ -16,8 +16,7 @@ int strwa_array_size(const char *str, const char *sep)
         return 0;
     for (int i = 0; str[i] != '\0'; i++)
         for (int j = 0; j < my_strlen(sep); j++)
-            if (str[i] == sep[j])
-                words++;
+            words += my_charcmp(str[i], sep[j]);
     return words;
 }
 
@@ -103,7 +102,7 @@ char **my_str_to_words_array(const char *str, const char separators[])
             free(words_arr->words[words_arr->current_word]);
             words_arr->words[words_arr->current_word] == NULL;
         }
-    for (int i = 0; i <  words_arr->str_length; i++)
+    for (int i = 0; i < words_arr->str_length; i++)
         str--;
     words = words_arr->words;
     free(words_arr);
