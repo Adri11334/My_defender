@@ -9,9 +9,11 @@
 
 void scene_game_call(game_t *game_manager)
 {
+    map_load_blocks(game_manager);
     while (sfRenderWindow_isOpen(game_manager->window)) {
         analyse_events(game_manager);
-        sfRenderWindow_clear(game_manager->window, sfBlue);
+        sfRenderWindow_clear(game_manager->window, sfBlack);
+        diplay_map_blocks(game_manager);
         sfRenderWindow_display(game_manager->window);
     }
 }

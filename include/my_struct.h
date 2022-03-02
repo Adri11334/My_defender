@@ -34,9 +34,32 @@
         void (*onClick) (void);
     } button_t;
 
+    typedef struct tower_s {
+        tower_type_t type;
+        sfSprite *sprite;
+        sfIntRect rect;
+        sfClock *clock;
+        float clock_rate;
+        dimension_t *dimension;
+        int frame_number;
+    } tower_t;
+
+    typedef struct map_block_s {
+        block_type_t type;
+        tower_t *tower;
+        dimension_t *dimension;
+        sfSprite *sprite;
+
+        sfRectangleShape *rect;
+    } map_block_t;
+
     typedef struct game_s {
         game_status_t status;
         sfRenderWindow *window;
+        sfTexture *game_texture;
+        linked_list *map_blocks;
+        linked_list *current_buttons;
+        char *current_map;
         sfEvent event;
     } game_t;
 

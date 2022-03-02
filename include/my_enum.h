@@ -18,6 +18,21 @@
         ROBOTO_BOLD,
     } font_t;
 
+    typedef enum tower_type_e {
+        TOWER_1,
+        TOWER_2,
+        TOWER_3,
+    } tower_type_t;
+
+    typedef enum block_type_e {
+        BLOCK_BORDER,
+        BLOCK_SPAWN,
+        BLOCK_HOME,
+        BLOCK_ROAD,
+        BLOCK_EMPTY,
+        BLOCK_WITH_TOWER,
+    } block_type_t;
+
     typedef enum button_status_e {
         ACTIVE,
         IDLE,
