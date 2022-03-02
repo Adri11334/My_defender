@@ -31,6 +31,7 @@
         MENU,
         GAME,
         PAUSE,
+        ENDED,
     } game_status_t;
 
 #endif /* !MY_ENUM_H_ */

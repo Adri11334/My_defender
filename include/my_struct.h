@@ -37,7 +37,7 @@
     typedef struct game_s {
         game_status_t status;
         sfRenderWindow *window;
-        sfEvent *event;
+        sfEvent event;
     } game_t;
 
 #endif /* !MY_STRUCT_H_ */

@@ -38,5 +38,8 @@
     void scene_menu_call(game_t *game_manager);
     void scene_game_call(game_t *game_manager);
 
-    void print_hello();
+    void analyse_events(game_t *game_manager);
+    void event_quit_game(game_t *game_manager);
+
+    void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */

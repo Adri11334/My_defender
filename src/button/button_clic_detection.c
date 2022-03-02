@@ -25,20 +25,25 @@ int button_hover_detection(sfVector2i m_pos, button_t *button)
     return 0;
 }
 
+int button_hovered(sfEvent *event, button_t *button)
+{
+    if (event->type == sfEvtMouseButtonPressed) {
+        if (button->status != CLICKED) {
+            button->status = CLICKED;
+            button->onClick();
+        }
+    } else {
+        button->status = HIGHLIGHT;
+    }
+    return 1;
+}
+
 int button_is_hover(sfRenderWindow *window, sfEvent *event, button_t *button)
 {
     sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(window);
 
     if (button_hover_detection(mouse_pos, button) == 1) {
-        if (event->type == sfEvtMouseButtonPressed) {
-            if (button->status != CLICKED) {
-                button->status = CLICKED;
-                button->onClick();
-            }
-        } else {
-            button->status = HIGHLIGHT;
-        }
-        return 1;
+        return button_hovered(event, button);
     } else {
         if (button->status != DISABLED && button->status != IDLE) {
             button->status = ACTIVE;

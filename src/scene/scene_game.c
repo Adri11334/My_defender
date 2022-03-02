@@ -9,5 +9,9 @@
 
 void scene_game_call(game_t *game_manager)
 {
-    sfRenderWindow_clear(game_manager->window, sfBlue);
+    while (sfRenderWindow_isOpen(game_manager->window)) {
+        analyse_events(game_manager);
+        sfRenderWindow_clear(game_manager->window, sfBlue);
+        sfRenderWindow_display(game_manager->window);
+    }
 }
