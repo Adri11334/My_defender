@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#include "my_project.h"
+#include "my_defender.h"
 
 
 button_t *button_one_create(sfColor _color, dimension_t *button_dim)
@@ -59,32 +59,25 @@ void made_map(char *map, sfRenderWindow *window, sfEvent *event) {
 int main_window(char **args)
 {
     sfVideoMode mode = {1920, 1080, 32};
-    sfRenderWindow *window;
-    sfEvent event;
-    char *map = get_and_check_map(args[1]);
-    //button_t *button = button_one_create(_sfRed);
+    game_t *game_manager = malloc(sizeof(game_t));
 
-    if (map == NULL) {
-        write_red("wrong map\n");
+    game_manager->status = MENU;
+    game_manager->window = sfRenderWindow_create(mode, "trop fort enfaite", sfFullscreen, NULL);
+    if (!game_manager->window)
         return 84;
-    }
-    window = sfRenderWindow_create(mode, "trop fort enfaite", sfFullscreen, NULL);
-    if (!window)
-        return 84;
-    while (sfRenderWindow_isOpen(window)) {
-        while (sfRenderWindow_pollEvent(window, &event)) {
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(window);
-            if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ)
-                sfRenderWindow_close(window);
+    while (sfRenderWindow_isOpen(game_manager->window)) {
+        while (sfRenderWindow_pollEvent(game_manager->window, game_manager->event)) {
+            if (game_manager->event->type == sfEvtClosed)
+                sfRenderWindow_close(game_manager->window);
         }
-        sfRenderWindow_clear(window, sfBlack);
-        //button_is_hover(window, &event, button);
-        //button_display(window, button);
-        made_map(map, window, &event);
-        sfRenderWindow_display(window);
+        switch (game_manager->status) {
+            case LOADING: break;
+            case MENU: scene_menu_call(game_manager); break;
+            case GAME: scene_game_call(game_manager); break;
+            case PAUSE: break;
+        }
+
     }
-    sfRenderWindow_destroy(window);
-    //button_destroy(button);
+    sfRenderWindow_destroy(game_manager->window);
     return 0;
 }

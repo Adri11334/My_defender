@@ -5,8 +5,8 @@
 ** my_project
 */
 
-#ifndef MY_PROJECT_H_
-#define MY_PROJECT_H_
+#ifndef MY_DEFENDER_H_
+#define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
     #include "my.h"
@@ -35,5 +35,8 @@
     dimension_t *parent_dimensions);
     void text_destroy(sfText *text);
 
+    void scene_menu_call(game_t *game_manager);
+    void scene_game_call(game_t *game_manager);
+
     void print_hello();
-#endif /* !MY_PROJECT_H_ */
+#endif /* !MY_DEFENDER_H_ */

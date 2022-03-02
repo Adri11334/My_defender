@@ -8,9 +8,9 @@
 #ifndef MY_STRUCT_H_
 #define MY_STRUCT_H_
 
-    #ifndef MY_PROJECT_H_
-        #include "my_project.h"
-    #endif /* !MY_PROJECT_H_ */
+    #ifndef MY_DEFENDER_H_
+        #include "my_defender.h"
+    #endif /* !MY_DEFENDER_H_ */
 
     typedef struct button_colors_s {
         sfColor normal;
@@ -33,5 +33,11 @@
         sfText *text;
         void (*onClick) (void);
     } button_t;
+
+    typedef struct game_s {
+        game_status_t status;
+        sfRenderWindow *window;
+        sfEvent *event;
+    } game_t;
 
 #endif /* !MY_STRUCT_H_ */

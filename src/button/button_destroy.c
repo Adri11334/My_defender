@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 
-#include "my_project.h"
+#include "my_defender.h"
 
 void button_destroy(button_t *button)
 {

@@ -5,7 +5,7 @@
 ** text_destroy
 */
 
-#include "my_project.h"
+#include "my_defender.h"
 
 void text_destroy(sfText *text)
 {

@@ -6,7 +6,7 @@
 */
 
 #include <stddef.h>
-#include "my_project.h"
+#include "my_defender.h"
 
 int main(int argc, char **argv, char **env)
 {

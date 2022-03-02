@@ -5,7 +5,7 @@
 ** button_detection
 */
 
-#include "my_project.h"
+#include "my_defender.h"
 
 int button_hover_detection(sfVector2i m_pos, button_t *button)
 {

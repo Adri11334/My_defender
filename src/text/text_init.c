@@ -5,7 +5,7 @@
 ** text_init
 */
 
-#include "my_project.h"
+#include "my_defender.h"
 
 sfFont *font_import(font_t font)
 {

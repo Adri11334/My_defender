@@ -5,7 +5,7 @@
 ** maps validity
 */
 
-#include "my_project.h"
+#include "my_defender.h"
 
 char *get_and_check_map(char *filepath)
 {

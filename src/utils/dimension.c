@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 
-#include "my_project.h"
+#include "my_defender.h"
 
 dimension_t *dimension_create(float sizex, float sizey, \
 float positionx, float positiony)

@@ -26,4 +26,11 @@
         DISABLED,
     } button_status_t;
 
+    typedef enum game_status_e {
+        LOADING,
+        MENU,
+        GAME,
+        PAUSE,
+    } game_status_t;
+
 #endif /* !MY_ENUM_H_ */

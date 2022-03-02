@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 
-#include "my_project.h"
+#include "my_defender.h"
 
 void redirect_all_stdout(void);
 
