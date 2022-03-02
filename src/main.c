@@ -12,5 +12,5 @@ int main(int argc, char **argv, char **env)
 {
     if (*env == NULL)
         return 84;
-    return main_window();
+    return main_window(argv);
 }

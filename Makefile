@@ -11,6 +11,7 @@ SRC			=	src/button/button_destroy.c			\
 				src/button/button_interactions.c	\
 				src/callbacks/cb_print_hello.c		\
 				src/display/display_button.c		\
+				src/maps/maps_validity.c		\
 				src/text/text_destroy.c				\
 				src/text/text_init.c				\
 				src/utils/dimension.c				\

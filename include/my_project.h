@@ -15,7 +15,7 @@
 
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
-    int main_window(void);
+    int main_window(char **args);
 
     dimension_t *dimension_create(float sizex, float sizey, \
     float positionx, float positiony);
