@@ -9,9 +9,22 @@
 #define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
-    #include "my.h"
-    #include "my_enum.h"
-    #include "my_struct.h"
+
+    #ifndef MY_H_
+        #include "my.h"
+    #endif /* !MY_H_ */
+
+    #ifndef LINKED_LISTS_H_
+        #include "linked_lists.h"
+    #endif /* !LINKED_LISTS_H_ */
+
+    #ifndef MY_ENUM_H_
+        #include "my_enum.h"
+    #endif /* !MY_ENUM_H_ */
+
+    #ifndef MY_STRUCT_H_
+        #include "my_struct.h"
+    #endif /* !MY_STRUCT_H_ */
 
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
@@ -40,6 +53,13 @@
 
     void analyse_events(game_t *game_manager);
     void event_quit_game(game_t *game_manager);
+
+    char *get_and_check_map(char *filepath);
+
+    map_block_t *map_block_create(dimension_t *dimension, block_type_t type);
+    void map_load_blocks(game_t *_gm);
+
+    void diplay_map_blocks(game_t *_gm);
 
     void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */

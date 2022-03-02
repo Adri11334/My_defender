@@ -12,13 +12,13 @@
 
 game_t *init_game(void)
 {
-    sfVideoMode mode = {1920, 1080, 32};
+    sfVideoMode mode = { 1920, 1080, 32 };
     game_t *game_manager = malloc(sizeof(game_t));
 
     if (game_manager == NULL)
         return NULL;
     game_manager->status = MENU;
-    game_manager->window = sfRenderWindow_create(mode, "trop fort enfaite", \
+    game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
     if (!game_manager->window) {
@@ -32,6 +32,11 @@ int main_window(char **args)
 {
     game_t *game_manager = init_game();
 
+    if (args[1] == NULL)
+        return -1;
+    game_manager->current_map = get_and_check_map(args[1]);
+    if (game_manager->current_map == NULL)
+        return 84;
     if (game_manager == NULL)
         return 84;
     switch (game_manager->status) {

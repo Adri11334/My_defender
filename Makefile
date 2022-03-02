@@ -11,8 +11,11 @@ SRC			=	src/button/button_destroy.c			\
 				src/button/button_interactions.c	\
 				src/callbacks/cb_print_hello.c		\
 				src/display/display_button.c		\
-				src/events/event_quit_game.c			\
+				src/display/display_map.c			\
+				src/events/event_quit_game.c		\
 				src/events/events.c					\
+				src/maps/maps_load_blocks.c			\
+				src/maps/maps_objects.c				\
 				src/maps/maps_validity.c			\
 				src/scene/scene_game.c				\
 				src/scene/scene_menu.c				\
