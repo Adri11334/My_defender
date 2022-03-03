@@ -47,8 +47,8 @@ int main_window(char **args)
         switch (game_manager->status) {
             case LOADING: break;
             case MENU: scene_menu_call(game_manager); break;
-            case HOW_TO_PLAY: break;
-            case SETTINGS: break;
+            case HOW_TO_PLAY: scene_how_to_play_call(game_manager); break;
+            case SETTINGS: scene_settings_call(game_manager); break;
             case GAME: scene_game_call(game_manager); break;
             case PAUSE: break;
         }

@@ -23,7 +23,9 @@ SRC			=	src/button/button_destroy.c			\
 				src/menu/menu_create_buttons.c		\
 				src/menu/menu_display_button.c		\
 				src/scene/scene_game.c				\
+				src/scene/scene_how_to.c			\
 				src/scene/scene_menu.c				\
+				src/scene/scene_settings.c			\
 				src/text/text_destroy.c				\
 				src/text/text_init.c				\
 				src/utils/dimension.c				\
