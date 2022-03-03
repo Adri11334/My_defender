@@ -36,12 +36,11 @@
 
     button_t *button_create(dimension_t *dimension, button_colors_t *color, \
     sfText *content, void *onClick);
-    void button_display(sfRenderWindow *window, button_t *button);
+    void button_display(game_t *_gm, button_t *button);
     void button_destroy(button_t *button);
 
     int button_hover_detection(sfVector2i mouse_position, button_t *button);
-    int button_is_hover(sfRenderWindow *window, sfEvent *event, \
-    button_t *button);
+    int button_is_hover(game_t *_gm, button_t *button);
 
     sfText *text_create(char *content, font_t font_wanted, int size, \
     dimension_t *parent_dimensions);
@@ -49,6 +48,11 @@
 
     void scene_menu_call(game_t *game_manager);
     void scene_game_call(game_t *game_manager);
+
+    void menu_play_clicked(game_t *_gm);
+    void menu_settings_clicked(game_t *_gm);
+    void menu_ht_clicked(game_t *_gm);
+    void menu_quit_clicked(game_t *_gm);
 
     void analyse_events(game_t *game_manager);
     void event_quit_game(game_t *game_manager);

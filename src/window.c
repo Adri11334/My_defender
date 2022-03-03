@@ -43,12 +43,16 @@ int main_window(char **args)
         return 84;
     if (game_manager == NULL)
         return 84;
-    switch (game_manager->status) {
-        case LOADING: break;
-        case MENU: scene_menu_call(game_manager); break;
-        case GAME: scene_game_call(game_manager); break;
-        case PAUSE: break;
-        case ENDED: sfRenderWindow_destroy(game_manager->window); break;
+    while (game_manager->status != ENDED) {
+        switch (game_manager->status) {
+            case LOADING: break;
+            case MENU: scene_menu_call(game_manager); break;
+            case HOW_TO_PLAY: break;
+            case SETTINGS: break;
+            case GAME: scene_game_call(game_manager); break;
+            case PAUSE: break;
+        }
     }
+    sfRenderWindow_destroy(game_manager->window);
     return 0;
 }

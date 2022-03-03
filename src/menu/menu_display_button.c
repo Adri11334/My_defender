@@ -14,7 +14,7 @@ void diplay_menu_buttons(game_t *_gm)
 
     while (buttons != NULL) {
         button = buttons->data;
-        button_display(_gm->window, button);
+        button_display(_gm, button);
         buttons = buttons->next;
     }
 }
