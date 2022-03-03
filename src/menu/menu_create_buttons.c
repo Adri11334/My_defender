@@ -21,7 +21,7 @@ sfColor _color)
     button_colors->highlight = (sfColor){ _color.r, _color.g, _color.b, 155 };
     button_colors->clicked = (sfColor){ _color.r, _color.g, _color.b, 100 };
     button_colors->disable = (sfColor){ _color.r, _color.g, _color.b, 20 };
-    button_dim = dimension_create(150, 100, posx, posy);
+    button_dim = dimension_create(180, 100, posx, posy);
     button_text = text_create(text, ROBOTO_REGULAR, 20, button_dim);
     return button_create(button_dim, button_colors, button_text, &print_hello);
 }
@@ -33,10 +33,10 @@ void init_menu_buttons(game_t *_gm)
     button_t *how_to_play = NULL;
     button_t *quit =NULL;
 
-    play = button_menu_create("PLAY", 895, 400, sfGreen);
-    settings = button_menu_create("SETTINGS", 895, 700, sfBlue);
-    how_to_play = button_menu_create("HOW TO PLAY", 895, 900, sfYellow);
-    quit = button_menu_create("QUIT", 895, 1100, sfRed);
+    play = button_menu_create("PLAY", 870, 150, sfGreen);
+    settings = button_menu_create("SETTINGS", 870, 350, sfBlue);
+    how_to_play = button_menu_create("HOW TO PLAY", 870, 550, sfYellow);
+    quit = button_menu_create("QUIT", 870, 750, sfRed);
     _gm->current_buttons = init_list(play);
     push_node(&_gm->current_buttons, settings);
     push_node(&_gm->current_buttons, how_to_play);
