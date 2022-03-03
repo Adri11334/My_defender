@@ -46,11 +46,12 @@
 
     typedef struct map_block_s {
         block_type_t type;
+        button_status_t status;
+        sfRectangleShape *rect;
+        button_colors_t *colors;
         tower_t *tower;
         dimension_t *dimension;
         sfSprite *sprite;
-
-        sfRectangleShape *rect;
     } map_block_t;
 
     typedef struct game_s {
