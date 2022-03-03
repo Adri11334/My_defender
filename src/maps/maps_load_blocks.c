@@ -5,13 +5,6 @@
 ** maps_load_blocks
 */
 
-/*
-** EPITECH PROJECT, 2022
-** defender
-** File description:
-** scene game
-*/
-
 #include "my_defender.h"
 
 int map_add_block(game_t *_gm, map_block_t *c_block, \
