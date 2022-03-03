@@ -14,13 +14,16 @@ game_t *init_game(void)
 {
     sfVideoMode mode = { 1920, 1080, 32 };
     game_t *game_manager = malloc(sizeof(game_t));
+    sfIntRect rect = { 0, 0, 1920, 1080 };
 
     if (game_manager == NULL)
         return NULL;
-    game_manager->status = MENU;
+    game_manager->status = GAME;
     game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
+    game_manager->game_texture = \
+    sfTexture_createFromFile("assets/image/main_tilesheet.png", &rect);
     if (!game_manager->window) {
         free(game_manager);
         return NULL;

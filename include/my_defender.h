@@ -56,10 +56,16 @@
 
     char *get_and_check_map(char *filepath);
 
-    map_block_t *map_block_create(dimension_t *dimension, block_type_t type);
+    map_block_t *map_block_create(dimension_t *dimension, block_type_t type, \
+    game_t *game_manager);
     void map_load_blocks(game_t *_gm);
 
     void diplay_map_blocks(game_t *_gm);
+    map_block_t *map_check_road_type(game_t *_gm, dimension_t *dims, \
+    int char_i);
+    map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, \
+    int char_i);
+
 
     void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */

@@ -25,12 +25,24 @@
     } tower_type_t;
 
     typedef enum block_type_e {
-        BLOCK_BORDER,
-        BLOCK_SPAWN,
+        BLOCK_BORDER_TOP,
+        BLOCK_BORDER_BOTTOM,
+        BLOCK_BORDER_LEFT,
+        BLOCK_BORDER_RIGHT,
+        BLOCK_BORDER_RT_CORNER,
+        BLOCK_BORDER_RB_CORNER,
+        BLOCK_BORDER_LT_CORNER,
+        BLOCK_BORDER_LB_CORNER,
+        BLOCK_SPAWNER,
         BLOCK_HOME,
-        BLOCK_ROAD,
-        BLOCK_EMPTY,
-        BLOCK_WITH_TOWER,
+        BLOCK_ROAD_VERT,
+        BLOCK_ROAD_HORI,
+        BLOCK_ROAD_TOP_LEFT_CORNER,
+        BLOCK_ROAD_TOP_RIGHT_CORNER,
+        BLOCK_ROAD_BOTTOM_LEFT_CORNER,
+        BLOCK_ROAD_BOTTOM_RIGHT_CORNER,
+        BLOCK_ROAD_X_CORNER,
+        BLOCK_VIRGIN,
     } block_type_t;
 
     typedef enum button_status_e {
