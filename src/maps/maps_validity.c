@@ -17,6 +17,7 @@ char *get_and_check_map(char *filepath)
     while (map[map_length] != '\0') {
         if (map[map_length] != '#' && map[map_length] != '-'
         && map[map_length] != '/' && map[map_length] != ' '
+        && map[map_length] != '\\' && map[map_length] != '+'
         && map[map_length] != '|' && map[map_length] != '\n'
         && map[map_length] != 'x' && map[map_length] != 'o') {
             return NULL;

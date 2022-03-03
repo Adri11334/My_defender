@@ -14,7 +14,7 @@ void diplay_map_blocks(game_t *_gm)
 
     while (map_block != NULL) {
         block = map_block->data;
-        sfRenderWindow_drawRectangleShape(_gm->window, block->rect, NULL);
+        sfRenderWindow_drawSprite(_gm->window, block->sprite, NULL);
         map_block = map_block->next;
     }
 }

@@ -16,6 +16,7 @@ SRC			=	src/button/button_destroy.c			\
 				src/events/events.c					\
 				src/maps/maps_load_blocks.c			\
 				src/maps/maps_objects.c				\
+				src/maps/maps_road_type.c				\
 				src/maps/maps_validity.c			\
 				src/scene/scene_game.c				\
 				src/scene/scene_menu.c				\
