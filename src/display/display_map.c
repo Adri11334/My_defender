@@ -31,7 +31,7 @@ void map_block_update_style(map_block_t *block)
 void diplay_map_blocks(game_t *_gm)
 {
     linked_list *map_block = _gm->map_blocks;
-    map_block_t *block;
+    map_block_t *block = NULL;
 
     while (map_block != NULL) {
         block = map_block->data;
