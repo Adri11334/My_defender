@@ -36,6 +36,8 @@
 
     typedef struct tower_s {
         tower_type_t type;
+        int range;
+        int damage;
         sfSprite *sprite;
         sfIntRect rect;
         sfClock *clock;
@@ -60,6 +62,7 @@
         sfTexture *game_texture;
         linked_list *map_blocks;
         linked_list *current_buttons;
+        dimension_t *actual_clicked_button;
         char *current_map;
         sfEvent event;
     } game_t;

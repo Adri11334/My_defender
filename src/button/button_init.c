@@ -9,6 +9,24 @@
 
 #include "my_defender.h"
 
+button_t *button_test_create()
+{
+    dimension_t *button_dim = NULL;
+    sfText *button_text = NULL;
+    button_colors_t *button_colors = malloc(sizeof(button_colors_t));
+
+    if (button_colors == NULL)
+        return NULL;
+    button_colors->normal = sfRed;
+    button_colors->idle = sfBlack;
+    button_colors->highlight = sfYellow;
+    button_colors->clicked = sfCyan;
+    button_colors->disable = sfBlue;
+    button_dim = dimension_create(150, 150, 150, 150);
+    button_text = text_create("My button", ROBOTO_REGULAR, 20, button_dim);
+    return button_create(button_dim, button_colors, button_text, &print_hello);
+}
+
 button_t *button_create(dimension_t *dimension, button_colors_t *color,
 sfText *content, void *onClick)
 {

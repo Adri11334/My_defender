@@ -65,6 +65,8 @@
     int char_i);
     map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, \
     int char_i);
+    int map_block_is_hover(sfRenderWindow *window, sfEvent *event, \
+    map_block_t *block, dimension_t **actual_clicked);
 
 
     void print_hello(void);
