@@ -24,6 +24,7 @@ game_t *init_game(void)
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
     game_manager->game_texture = \
     sfTexture_createFromFile("assets/image/main_tilesheet.png", &rect);
+    game_manager->actual_clicked_button = NULL;
     if (!game_manager->window) {
         free(game_manager);
         return NULL;
