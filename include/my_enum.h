@@ -19,9 +19,10 @@
     } font_t;
 
     typedef enum tower_type_e {
-        TOWER_1,
-        TOWER_2,
-        TOWER_3,
+        EARTH_TOWER,
+        ICE_TOWER,
+        SAND_TOWER,
+        FIRE_TOWER,
     } tower_type_t;
 
     typedef enum block_type_e {

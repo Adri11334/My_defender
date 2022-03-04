@@ -50,11 +50,12 @@
         int range;
         int damage;
         sfSprite *sprite;
-        sfIntRect rect;
+        sfIntRect *rect;
         sfClock *clock;
         float clock_rate;
         dimension_t *dimension;
-        int frame_number;
+        int max_frame;
+        int current_frame;
     } tower_t;
 
     typedef struct map_block_s {
