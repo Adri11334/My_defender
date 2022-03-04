@@ -73,5 +73,11 @@
     button_t *button_menu_create(char *text, float posx, float posy, \
     sfColor _color);
 
+    int tower_set_range(tower_type_t type, int tower_level);
+    int tower_set_damages(tower_type_t type, int tower_level);
+    tower_t *tower_create(dimension_t *dimension, tower_type_t type, \
+    game_t *_gm);
+
+    void clear_previous_buttons(game_t *_gm);
     void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */

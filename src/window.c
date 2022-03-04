@@ -18,12 +18,12 @@ game_t *init_game(void)
 
     if (game_manager == NULL)
         return NULL;
-    game_manager->status = MENU;
+    game_manager->status = GAME;
     game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
     game_manager->game_texture = \
-    sfTexture_createFromFile("assets/image/main_tilesheet.png", &rect);
+    sfTexture_createFromFile("assets/image/temp_main_tilesheet.png", &rect);
     game_manager->actual_clicked_button = NULL;
     if (!game_manager->window) {
         free(game_manager);
