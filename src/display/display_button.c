@@ -30,9 +30,10 @@ void button_update_style(button_t *btn)
     }
 }
 
-void button_display(sfRenderWindow *window, button_t *button)
+void button_display(game_t *_gm, button_t *button)
 {
+    button_is_hover(_gm, button);
     button_update_style(button);
-    sfRenderWindow_drawRectangleShape(window, button->rect, NULL);
-    sfRenderWindow_drawText(window, button->text, NULL);
+    sfRenderWindow_drawRectangleShape(_gm->window, button->rect, NULL);
+    sfRenderWindow_drawText(_gm->window, button->text, NULL);
 }

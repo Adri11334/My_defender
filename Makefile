@@ -9,6 +9,7 @@ SRC			=	src/button/button_destroy.c			\
 				src/button/button_clic_detection.c	\
 				src/button/button_init.c			\
 				src/button/button_interactions.c	\
+				src/callbacks/callbacks.c			\
 				src/callbacks/cb_print_hello.c		\
 				src/display/display_button.c		\
 				src/display/display_map.c			\
@@ -23,7 +24,9 @@ SRC			=	src/button/button_destroy.c			\
 				src/menu/menu_create_buttons.c		\
 				src/menu/menu_display_button.c		\
 				src/scene/scene_game.c				\
+				src/scene/scene_how_to.c			\
 				src/scene/scene_menu.c				\
+				src/scene/scene_settings.c			\
 				src/text/text_destroy.c				\
 				src/text/text_init.c				\
 				src/towers/towers_init.c			\

@@ -57,6 +57,8 @@
     typedef enum game_status_e {
         LOADING,
         MENU,
+        HOW_TO_PLAY,
+        SETTINGS,
         GAME,
         PAUSE,
         ENDED,
