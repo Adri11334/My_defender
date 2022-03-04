@@ -39,7 +39,6 @@
     void button_display(sfRenderWindow *window, button_t *button);
     void button_destroy(button_t *button);
 
-
     int button_hover_detection(sfVector2i mouse_position, button_t *button);
     int button_is_hover(sfRenderWindow *window, sfEvent *event, \
     button_t *button);
@@ -53,6 +52,9 @@
 
     void analyse_events(game_t *game_manager);
     void event_quit_game(game_t *game_manager);
+
+    void init_menu_buttons(game_t *_gm);
+    void diplay_menu_buttons(game_t *_gm);
 
     char *get_and_check_map(char *filepath);
 
@@ -68,6 +70,14 @@
     int map_block_is_hover(sfRenderWindow *window, sfEvent *event, \
     map_block_t *block, dimension_t **actual_clicked);
 
+    button_t *button_menu_create(char *text, float posx, float posy, \
+    sfColor _color);
 
+    int tower_set_range(tower_type_t type, int tower_level);
+    int tower_set_damages(tower_type_t type, int tower_level);
+    tower_t *tower_create(dimension_t *dimension, tower_type_t type, \
+    game_t *_gm);
+
+    void clear_previous_buttons(game_t *_gm);
     void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */
