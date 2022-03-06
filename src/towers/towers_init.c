@@ -51,7 +51,7 @@ int tower_set_damages(tower_type_t type, int tower_level)
 tower_t *tower_create(dimension_t *dimension, tower_type_t type, \
 game_t *_gm)
 {
-    tower_t *tower = malloc(sizeof(map_block_t));
+    tower_t *tower = malloc(sizeof(tower_t));
     dimension_t *tower_dims = NULL;
 
     if (tower == NULL || dimension == NULL || _gm == NULL)
@@ -67,9 +67,9 @@ game_t *_gm)
     sfSprite_setTextureRect(tower->sprite, *tower->rect);
     sfSprite_setPosition(tower->sprite, *tower_dims->position);
     tower->clock = sfClock_create();
-    tower->clock_rate = 1;
+    tower->clock_rate = (float)1;
     tower->dimension = tower_dims;
-    //tower->max_frame = 1;
-    //tower->current_frame = 1;
+    tower->max_frame = (int)1;
+    tower->current_frame = (int)1;
     return tower;
 }
