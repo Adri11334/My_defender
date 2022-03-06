@@ -51,6 +51,7 @@ int main_window(char **args)
             case SETTINGS: scene_settings_call(game_manager); break;
             case GAME: scene_game_call(game_manager); break;
             case PAUSE: break;
+            default: game_manager->status = ENDED; break;
         }
     }
     sfRenderWindow_destroy(game_manager->window);

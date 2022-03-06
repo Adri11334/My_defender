@@ -5,6 +5,7 @@
 ** init a play button
 */
 
+#include <stdlib.h>
 #include "my_defender.h"
 
 button_t *button_menu_create(char *text, float posx, float posy, \
@@ -31,7 +32,7 @@ void init_menu_buttons(game_t *_gm)
     button_t *play = NULL;
     button_t *settings = NULL;
     button_t *how_to_play = NULL;
-    button_t *quit =NULL;
+    button_t *quit = NULL;
 
     play = button_menu_create("PLAY", 870, 150, sfGreen);
     play->onClick = menu_play_clicked;

@@ -8,22 +8,22 @@
 #include "my_defender.h"
 
 int map_add_block(game_t *_gm, map_block_t *c_block, \
-dimension_t *dimensions, int current_char_index)
+dimension_t *dimensions, int char_i)
 {
     dimension_t *dims = NULL;
 
     dims = dimension_create(dimensions->size->x, dimensions->size->x, \
     dimensions->position->x, dimensions->position->y);
     if (dims == NULL)
-        return NULL;
-    switch (_gm->current_map[current_char_index]) {
+        return 84;
+    switch (_gm->current_map[char_i]) {
         case '\n': return -1;
-        case '#': c_block = map_check_border_type(_gm, dims, current_char_index); break;
-        case '-': c_block = map_check_road_type(_gm, dims, current_char_index); break;
-        case '/': c_block = map_check_road_type(_gm, dims, current_char_index); break;
-        case '|': c_block = map_check_road_type(_gm, dims, current_char_index); break;
-        case '\\': c_block = map_check_road_type(_gm, dims, current_char_index); break;
-        case '+': c_block = map_check_road_type(_gm, dims, current_char_index); break;
+        case '#': c_block = map_check_border_type(_gm, dims, char_i); break;
+        case '-': c_block = map_check_road_type(_gm, dims, char_i); break;
+        case '/': c_block = map_check_road_type(_gm, dims, char_i); break;
+        case '|': c_block = map_check_road_type(_gm, dims, char_i); break;
+        case '\\': c_block = map_check_road_type(_gm, dims, char_i); break;
+        case '+': c_block = map_check_road_type(_gm, dims, char_i); break;
         case ' ': c_block = map_block_create(dims, BLOCK_VIRGIN, _gm); break;
         case 'o': c_block = map_block_create(dims, BLOCK_HOME, _gm); break;
         case 'x': c_block = map_block_create(dims, BLOCK_SPAWNER, _gm); break;

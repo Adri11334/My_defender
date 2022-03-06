@@ -62,6 +62,8 @@
     void init_menu_buttons(game_t *_gm);
     void diplay_menu_buttons(game_t *_gm);
 
+    void setup_ingame_menu(game_t *_gm);
+
     char *get_and_check_map(char *filepath);
 
     map_block_t *map_block_create(dimension_t *dimension, block_type_t type, \
@@ -81,8 +83,11 @@
 
     int tower_set_range(tower_type_t type, int tower_level);
     int tower_set_damages(tower_type_t type, int tower_level);
+    void *get_correct_tower_callback(tower_type_t type);
     tower_t *tower_create(dimension_t *dimension, tower_type_t type, \
     game_t *_gm);
+
+    void add_update_earth_tower(game_t *_gm);
 
     void clear_previous_buttons(game_t *_gm);
     void print_hello(void);

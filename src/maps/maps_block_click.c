@@ -45,7 +45,8 @@ map_block_t *block, dimension_t **actual_clicked)
         map_block_hovered(event, block);
         if (block->status != CLICKED && *actual_clicked == block->dimension) {
             block->status = CLICKED;
-        } else if (block->status == CLICKED && *actual_clicked != block->dimension) {
+        } else if (block->status == CLICKED \
+        && *actual_clicked != block->dimension) {
             *actual_clicked = block->dimension;
         }
         return 1;
