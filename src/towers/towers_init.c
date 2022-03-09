@@ -17,11 +17,11 @@ sfIntRect *tower_get_corect_rect(dimension_t *dimension, block_type_t type)
     rect->width = dimension->size->x;
     rect->height = dimension->size->y;
     switch (type) {
-        case EARTH_TOWER: rect->left = 0; rect->top = 450; break;
-        case ICE_TOWER: rect->left = 480; rect->top = 0; break;
-        case SAND_TOWER: rect->left = 480; rect->top = 120; break;
-        case FIRE_TOWER: rect->left = 480; rect->top = 120; break;
-        default: rect->left = 360; rect->top = 360; break;
+        case EARTH_TOWER: rect->left = 960; rect->top = 0; break;
+        case ICE_TOWER: rect->left = 1440; rect->top = 120; break;
+        case SAND_TOWER: rect->left = 860; rect->top = 120; break;
+        case FIRE_TOWER: rect->left = 1440; rect->top = 0; break;
+        default: rect->left = 120; rect->top = 120; break;
     }
     return rect;
 }
