@@ -18,7 +18,7 @@ game_t *init_game(void)
 
     if (game_manager == NULL)
         return NULL;
-    game_manager->status = GAME;
+    game_manager->status = MENU;
     game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
@@ -51,6 +51,7 @@ int main_window(char **args)
             case SETTINGS: scene_settings_call(game_manager); break;
             case GAME: scene_game_call(game_manager); break;
             case PAUSE: break;
+            default: game_manager->status = ENDED; break;
         }
     }
     sfRenderWindow_destroy(game_manager->window);

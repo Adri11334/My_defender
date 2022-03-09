@@ -10,5 +10,4 @@
 void event_quit_game(game_t *game_manager)
 {
     game_manager->status = ENDED;
-    sfRenderWindow_close(game_manager->window);
 }
