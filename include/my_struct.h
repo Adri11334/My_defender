@@ -36,6 +36,8 @@
         game_status_t status;
         sfRenderWindow *window;
         sfTexture *game_texture;
+        scene_t *menu_scene;
+        scene_t *game_scene;
         linked_list *map_blocks;
         linked_list *current_buttons;
         dimension_t *actual_clicked_button;
