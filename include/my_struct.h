@@ -25,6 +25,13 @@
         sfVector2f *position;
     } dimension_t;
 
+    typedef struct scene_s {
+        linked_list *blocks;
+        linked_list *buttons;
+        linked_list *entitys;
+        linked_list *panels;
+    } scene_t;
+
     typedef struct game_s {
         game_status_t status;
         sfRenderWindow *window;
