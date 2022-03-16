@@ -25,12 +25,18 @@ int button_hover_detection(sfVector2i m_pos, button_t *button)
     return 0;
 }
 
-int button_hovered(sfEvent *event, button_t *button)
+int button_hovered(game_t *_gm, button_t *button)
 {
+    sfEvent *event = NULL;
+
+    if (_gm == NULL || button == NULL)
+        return 84;
+    if ((event = &_gm->event) == NULL)
+        return 84;
     if (event->type == sfEvtMouseButtonPressed) {
-        if (button->status != CLICKED) {
+        if (button->status != CLICKED && button->onClick != NULL) {
             button->status = CLICKED;
-            button->onClick();
+            button->onClick(_gm);
         }
     } else {
         button->status = HIGHLIGHT;
@@ -38,12 +44,15 @@ int button_hovered(sfEvent *event, button_t *button)
     return 1;
 }
 
-int button_is_hover(sfRenderWindow *window, sfEvent *event, button_t *button)
+int button_is_hover(game_t *_gm, button_t *button)
 {
-    sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(window);
+    sfVector2i mouse_pos;
 
+    if (_gm == NULL || button == NULL)
+        return;
+    mouse_pos = sfMouse_getPositionRenderWindow(_gm->window);
     if (button_hover_detection(mouse_pos, button) == 1) {
-        return button_hovered(event, button);
+        return button_hovered(_gm, button);
     } else {
         if (button->status != DISABLED && button->status != IDLE) {
             button->status = ACTIVE;

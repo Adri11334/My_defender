@@ -4,6 +4,8 @@
         "my_enum.h": "c",
         "my_struct.h": "c",
         "stdlib.h": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "my_defender.h": "c",
+        "my.h": "c"
     }
 }

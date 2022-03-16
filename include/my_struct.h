@@ -25,19 +25,47 @@
         sfVector2f *position;
     } dimension_t;
 
+    typedef struct game_s {
+        game_status_t status;
+        sfRenderWindow *window;
+        sfTexture *game_texture;
+        linked_list *map_blocks;
+        linked_list *current_buttons;
+        dimension_t *actual_clicked_button;
+        char *current_map;
+        sfEvent event;
+    } game_t;
+
     typedef struct button_s {
         button_status_t status;
         sfRectangleShape *rect;
         button_colors_t *colors;
         dimension_t *dimension;
         sfText *text;
-        void (*onClick) (void);
+        void (*onClick) (game_t *_game_manager);
     } button_t;
 
-    typedef struct game_s {
-        game_status_t status;
-        sfRenderWindow *window;
-        sfEvent event;
-    } game_t;
+    typedef struct tower_s {
+        tower_type_t type;
+        int range;
+        int damage;
+        sfSprite *sprite;
+        sfIntRect *rect;
+        sfClock *clock;
+        float clock_rate;
+        dimension_t *dimension;
+        int max_frame;
+        int current_frame;
+    } tower_t;
+
+    typedef struct map_block_s {
+        block_type_t type;
+        button_status_t status;
+        sfRectangleShape *rect;
+        button_colors_t *colors;
+        tower_t *tower;
+        dimension_t *dimension;
+        sfSprite *sprite;
+    } map_block_t;
 
 #endif /* !MY_STRUCT_H_ */
