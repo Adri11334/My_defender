@@ -36,7 +36,7 @@ void diplay_map_blocks(game_t *_gm)
 
     if (_gm == NULL)
         return;
-    map_block = _gm->map_blocks;
+    map_block = _gm->game_scene->blocks;
     while (map_block != NULL) {
         if (!map_block->data)
             continue;

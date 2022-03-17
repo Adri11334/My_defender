@@ -2,21 +2,19 @@
 ** EPITECH PROJECT, 2022
 ** defender
 ** File description:
-** destroyer
+** in_game_display_buttons
 */
 
 #include "my_defender.h"
 
-void clear_previous_buttons(scene_t *scene)
+void diplay_game_buttons(game_t *_gm)
 {
-    linked_list *buttons = scene->buttons;
+    linked_list *buttons = _gm->game_scene->buttons;
     button_t *button = NULL;
 
-    back_to_start(&scene->buttons);
     while (buttons != NULL) {
         button = buttons->data;
-        button_destroy(button);
+        button_display(_gm, button);
         buttons = buttons->next;
     }
-    destroy_node(&scene->buttons);
 }

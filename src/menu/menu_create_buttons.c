@@ -42,8 +42,8 @@ void init_menu_buttons(game_t *_gm)
     how_to_play->onClick = menu_ht_clicked;
     quit = button_menu_create("QUIT", 870, 750, sfRed);
     quit->onClick = menu_quit_clicked;
-    _gm->current_buttons = init_list(play);
-    push_node(&_gm->current_buttons, settings);
-    push_node(&_gm->current_buttons, how_to_play);
-    push_node(&_gm->current_buttons, quit);
+    _gm->menu_scene->buttons = init_list(play);
+    push_node(&_gm->menu_scene->buttons, settings);
+    push_node(&_gm->menu_scene->buttons, how_to_play);
+    push_node(&_gm->menu_scene->buttons, quit);
 }
