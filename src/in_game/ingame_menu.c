@@ -40,8 +40,11 @@ void setup_ingame_menu(game_t *_gm)
     earth_tower = button_ingamemenu_create("ET", 1500, 690, sfMagenta);
     earth_tower->onClick = &add_update_earth_tower;
     ice_tower = button_ingamemenu_create("IT", 1710, 690, sfCyan);
+    ice_tower->onClick = &add_update_ice_tower;
     sand_tower = button_ingamemenu_create("ST", 1500, 900, sfYellow);
+    sand_tower->onClick = &add_update_sand_tower;
     fire_tower = button_ingamemenu_create("FT", 1710, 900, sfRed);
+    fire_tower->onClick = &add_update_fire_tower;
     _gm->game_scene->buttons = init_list(pause);
     push_node(&_gm->game_scene->buttons, earth_tower);
     push_node(&_gm->game_scene->buttons, ice_tower);
