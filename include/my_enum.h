@@ -64,4 +64,17 @@
         ENDED,
     } game_status_t;
 
+    typedef enum directioons_e {
+        TOP,
+        RIGHT,
+        DOWN,
+        LEFT,
+    } direction_t;
+
+    typedef enum ennemy_type_e {
+        ICE_GOLEM,
+        EARTH_GOLEM,
+        FIRE_GOLEM,
+    } ennemy_type_t;
+
 #endif /* !MY_ENUM_H_ */

@@ -12,6 +12,7 @@
         #include "my_defender.h"
     #endif /* !MY_DEFENDER_H_ */
 
+
     typedef struct button_colors_s {
         sfColor normal;
         sfColor idle;
@@ -32,14 +33,24 @@
         linked_list *panels;
     } scene_t;
 
+    typedef struct ennemy_s {
+        ennemy_type_t type;
+        dimension_t *stats;
+        sfSprite *sprite;
+        float clock_rate;
+        sfVector2f pos;
+        sfIntRect rect;
+        sfClock *clock;
+        int speed;
+        int life;
+    } ennemy_t;
+
     typedef struct game_s {
         game_status_t status;
         sfRenderWindow *window;
         sfTexture *game_texture;
         scene_t *menu_scene;
         scene_t *game_scene;
-        /* linked_list *map_blocks;
-        linked_list *current_buttons; */
         dimension_t *actual_clicked_button;
         char *current_map;
         sfEvent event;
@@ -65,6 +76,7 @@
         dimension_t *dimension;
         int max_frame;
         int current_frame;
+        linked_list *shooting_ennemys;
     } tower_t;
 
     typedef struct map_block_s {

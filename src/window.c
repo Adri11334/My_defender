@@ -23,7 +23,7 @@ game_t *init_game(void)
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
     game_manager->game_texture = \
-    sfTexture_createFromFile("assets/image/temp_main_tilesheet.png", &rect);
+    sfTexture_createFromFile("assets/image/temp_main_tilesheet_2.png", &rect);
     game_manager->menu_scene = malloc(sizeof(scene_t));
     game_manager->game_scene = malloc(sizeof(scene_t));
     game_manager->actual_clicked_button = NULL;
