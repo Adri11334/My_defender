@@ -89,6 +89,9 @@
     game_t *_gm);
 
     void add_update_earth_tower(game_t *_gm);
+    void add_update_sand_tower(game_t *_gm);
+    void add_update_ice_tower(game_t *_gm);
+    void add_update_fire_tower(game_t *_gm);
 
     void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
