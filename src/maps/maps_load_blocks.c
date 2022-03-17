@@ -29,7 +29,7 @@ dimension_t *dimensions, int char_i)
         case 'x': c_block = map_block_create(dims, BLOCK_SPAWNER, _gm); break;
         default: c_block = map_block_create(dims, BLOCK_VIRGIN, _gm);
     }
-    push_node(&_gm->map_blocks, c_block);
+    push_node(&_gm->game_scene->blocks, c_block);
     return 0;
 }
 
@@ -42,7 +42,7 @@ void map_load_blocks(game_t *_gm)
     if (dimensions == NULL)
         return;
     c_block = map_block_create(dimensions, BLOCK_BORDER_TOP, _gm);
-    _gm->map_blocks = init_list(c_block);
+    _gm->game_scene->blocks = init_list(c_block);
     dimensions->position->x += 120;
     for (int i = 1; _gm->current_map[i] != '\0'; i++) {
         if (map_add_block(_gm, c_block, dimensions, i) == -1) {

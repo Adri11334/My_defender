@@ -71,6 +71,7 @@
     void map_load_blocks(game_t *_gm);
 
     void diplay_map_blocks(game_t *_gm);
+    void diplay_game_buttons(game_t *_gm);
     map_block_t *map_check_road_type(game_t *_gm, dimension_t *dims, \
     int char_i);
     map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, \
@@ -89,6 +90,6 @@
 
     void add_update_earth_tower(game_t *_gm);
 
-    void clear_previous_buttons(game_t *_gm);
+    void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
 #endif /* !MY_DEFENDER_H_ */

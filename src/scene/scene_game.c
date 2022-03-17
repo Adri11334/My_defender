@@ -16,7 +16,7 @@ void scene_game_call(game_t *game_manager)
         analyse_events(game_manager);
         sfRenderWindow_clear(game_manager->window, (sfColor){52, 73, 94,1.0});
         diplay_map_blocks(game_manager);
-        diplay_menu_buttons(game_manager);
+        diplay_game_buttons(game_manager);
         sfRenderWindow_display(game_manager->window);
     }
 }

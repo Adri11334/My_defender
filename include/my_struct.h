@@ -25,12 +25,21 @@
         sfVector2f *position;
     } dimension_t;
 
+    typedef struct scene_s {
+        linked_list *blocks;
+        linked_list *buttons;
+        linked_list *entitys;
+        linked_list *panels;
+    } scene_t;
+
     typedef struct game_s {
         game_status_t status;
         sfRenderWindow *window;
         sfTexture *game_texture;
-        linked_list *map_blocks;
-        linked_list *current_buttons;
+        scene_t *menu_scene;
+        scene_t *game_scene;
+        /* linked_list *map_blocks;
+        linked_list *current_buttons; */
         dimension_t *actual_clicked_button;
         char *current_map;
         sfEvent event;

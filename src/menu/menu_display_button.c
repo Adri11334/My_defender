@@ -9,7 +9,7 @@
 
 void diplay_menu_buttons(game_t *_gm)
 {
-    linked_list *buttons = _gm->current_buttons;
+    linked_list *buttons = _gm->menu_scene->buttons;
     button_t *button = NULL;
 
     while (buttons != NULL) {
