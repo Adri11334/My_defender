@@ -5,34 +5,37 @@
 ## Makefile
 ##
 
-SRC			=	src/button/button_destroy.c			\
-				src/button/button_clic_detection.c	\
-				src/button/button_init.c			\
-				src/button/button_interactions.c	\
-				src/callbacks/callbacks.c			\
-				src/callbacks/cb_print_hello.c		\
-				src/display/display_button.c		\
-				src/display/display_map.c			\
-				src/events/event_quit_game.c		\
-				src/events/events.c					\
-				src/in_game/ingame_menu.c			\
-				src/maps/maps_block_click.c			\
-				src/maps/maps_load_blocks.c			\
-				src/maps/maps_objects.c				\
-				src/maps/maps_road_type.c			\
-				src/maps/maps_validity.c			\
-				src/menu/menu_create_buttons.c		\
-				src/menu/menu_display_button.c		\
-				src/scene/scene_game.c				\
-				src/scene/scene_how_to.c			\
-				src/scene/scene_menu.c				\
-				src/scene/scene_settings.c			\
-				src/text/text_destroy.c				\
-				src/text/text_init.c				\
-				src/towers/towers_init.c			\
-				src/utils/dimension.c				\
-				src/destroyer.c						\
-				src/window.c						\
+SRC			=	src/button/button_destroy.c				\
+				src/button/button_clic_detection.c		\
+				src/button/button_init.c				\
+				src/button/button_interactions.c		\
+				src/callbacks/callbacks.c				\
+				src/callbacks/cb_print_hello.c			\
+				src/display/display_button.c			\
+				src/display/display_map.c				\
+				src/display/display_parallax.c			\
+				src/events/event_quit_game.c			\
+				src/events/events.c						\
+				src/in_game/ingame_menu.c				\
+				src/maps/maps_block_click.c				\
+				src/maps/maps_load_blocks.c				\
+				src/maps/maps_objects.c					\
+				src/maps/maps_road_type.c				\
+				src/maps/maps_validity.c				\
+				src/menu/menu_create_buttons.c			\
+				src/menu/menu_display_button.c			\
+				src/parallax/parallax_create_layer.c	\
+				src/parallax/parallax_init_layer.c		\
+				src/scene/scene_game.c					\
+				src/scene/scene_how_to.c				\
+				src/scene/scene_menu.c					\
+				src/scene/scene_settings.c				\
+				src/text/text_destroy.c					\
+				src/text/text_init.c					\
+				src/towers/towers_init.c				\
+				src/utils/dimension.c					\
+				src/destroyer.c							\
+				src/window.c							\
 
 CRITERION	=	$(wildcard tests/*.c)
 
