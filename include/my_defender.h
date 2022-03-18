@@ -9,6 +9,7 @@
 #define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
+    #include <stdlib.h>
 
     #ifndef MY_H_
         #include "my.h"
@@ -25,6 +26,7 @@
     #ifndef MY_STRUCT_H_
         #include "my_struct.h"
     #endif /* !MY_STRUCT_H_ */
+
 
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
@@ -78,6 +80,15 @@
     int char_i);
     int map_block_is_hover(sfRenderWindow *window, sfEvent *event, \
     map_block_t *block, dimension_t **actual_clicked);
+
+    void init_ennemys(game_t *_gm);
+    void spawn_new_ennemys(game_t *_gm);
+    void display_ennemy(game_t *_gm, ennemy_t *ennemy);
+    void ennemy_move(game_t *_gm, ennemy_t *ennemy);
+    void ennemy_display_manager(game_t *_gm);
+    sfVector2f *spawner_position(char *map);
+    ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type);
+    void destroy_ennemy(ennemy_t *ennemy);
 
     button_t *button_menu_create(char *text, float posx, float posy, \
     sfColor _color);
