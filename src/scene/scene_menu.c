@@ -10,6 +10,7 @@
 void scene_menu_call(game_t *game_manager)
 {
     init_menu_buttons(game_manager);
+    parallax_init_layer(game_manager);
     while (sfRenderWindow_isOpen(game_manager->window) \
     && game_manager->status == MENU) {
         analyse_events(game_manager);

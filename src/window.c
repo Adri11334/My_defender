@@ -31,7 +31,6 @@ game_t *init_game(void)
         free(game_manager);
         return NULL;
     }
-    game_manager->parallax = parallax_init_layer(   );
     return game_manager;
 }
 

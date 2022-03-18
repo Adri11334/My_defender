@@ -107,7 +107,8 @@
     void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
 
-    layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim);
-    parallax_t *parallax_init_layer(void);
+    layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim, \
+    int offset);
+    void parallax_init_layer(game_t *_gm);
     void display_parallax(game_t *_gm);
 #endif /* !MY_DEFENDER_H_ */

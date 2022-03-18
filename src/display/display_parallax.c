@@ -7,14 +7,29 @@
 
 #include "my_defender.h"
 
+void move_parallax(layer_t *layer, int max)
+{
+    if (layer == NULL)
+        return;
+    if ((layer->rect->left + layer->offset) < max) {
+        layer->rect->left = layer->rect->left + layer->offset;
+    } else {
+        layer->rect->left = 0;
+    }
+    sfSprite_setTextureRect(layer->sprite, *layer->rect);
+}
+
 void display_parallax(game_t *_gm)
 {
-    sfRenderWindow_clear(_gm->window, sfTransparent);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->sky->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->rocks->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->clouds->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->hillst->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->hillso->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->trees->sprite, NULL);
-    sfRenderWindow_drawSprite(_gm->window, _gm->parallax->ground->sprite, NULL);
+    linked_list *layers = _gm->menu_scene->panels;
+    layer_t *layer = NULL;
+
+    for (; layers != NULL; layers = layers->next) {
+        if (!layers->data)
+            continue;
+        layer = layers->data;
+        move_parallax(layer, 1920);
+        sfRenderWindow_drawSprite(_gm->window, layer->sprite, NULL);
+    }
+    back_to_start(&layers);
 }
