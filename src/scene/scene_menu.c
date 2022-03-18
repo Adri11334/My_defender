@@ -14,6 +14,7 @@ void scene_menu_call(game_t *game_manager)
     && game_manager->status == MENU) {
         analyse_events(game_manager);
         sfRenderWindow_clear(game_manager->window, sfBlack);
+        display_parallax(game_manager);
         diplay_menu_buttons(game_manager);
         sfRenderWindow_display(game_manager->window);
     }

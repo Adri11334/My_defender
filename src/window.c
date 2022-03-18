@@ -18,7 +18,7 @@ game_t *init_game(void)
 
     if (game_manager == NULL)
         return NULL;
-    game_manager->status = GAME;
+    game_manager->status = MENU;
     game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
@@ -29,6 +29,7 @@ game_t *init_game(void)
         free(game_manager);
         return NULL;
     }
+    game_manager->parallax = parallax_init_layer(   );
     return game_manager;
 }
 
