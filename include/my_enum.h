@@ -69,6 +69,7 @@
         RIGHT,
         DOWN,
         LEFT,
+        FINISH,
     } direction_t;
 
     typedef enum ennemy_type_e {

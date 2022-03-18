@@ -16,6 +16,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/display/display_ennemy.c			\
 				src/display/display_map.c				\
 				src/ennemis/ennemis_gen.c				\
+				src/ennemis/ennemy_move.c				\
 				src/events/event_quit_game.c			\
 				src/events/events.c						\
 				src/in_game/in_game_display_buttons.c	\

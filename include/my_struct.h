@@ -35,13 +35,15 @@
 
     typedef struct ennemy_s {
         direction_t direction;
+        sfClock *anim_clock;
+        sfClock *move_clock;
         ennemy_type_t type;
         dimension_t *stats;
+        float anim_speed;
+        float move_speed;
         sfSprite *sprite;
         sfVector2f n_pos;
-        float clock_rate;
         sfIntRect rect;
-        sfClock *clock;
         int gap;
         int life;
     } ennemy_t;

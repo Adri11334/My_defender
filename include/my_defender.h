@@ -80,7 +80,8 @@
     map_block_t *block, dimension_t **actual_clicked);
 
     void display_ennemy(game_t *_gm, ennemy_t *ennemy);
-
+    void ennemy_move(game_t *_gm, ennemy_t *ennemy);
+    void ennemy_display_manager(game_t *_gm);
     sfVector2f *spawner_position(char *map);
     ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type);
 

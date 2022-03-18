@@ -40,23 +40,23 @@ ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type)
 {
     ennemy_t *ennemy = malloc(sizeof(ennemy_t));
 
-    if (ennemy == NULL)
-        return NULL;
+    ennemy->direction = RIGHT;
     ennemy->type = type;
     ennemy->stats = ennemy_correct_dims(_gm, type);
     ennemy->sprite = sfSprite_create();
     sfSprite_setTexture(ennemy->sprite, _gm->game_texture, sfFalse);
     ennemy->rect = ennemy_correct_rect(type);
-    ennemy->clock = sfClock_create();
+    ennemy->anim_clock = sfClock_create();
+    ennemy->move_clock = sfClock_create();
     switch (type) {
         case ICE_GOLEM: ennemy->life = 100; break;
         case EARTH_GOLEM: ennemy->life = 100; break;
         case FIRE_GOLEM: ennemy->life = 100; break;
     }
-    ennemy->clock_rate = 7;
+    ennemy->anim_speed = 70;
     ennemy->gap = 120;
+    ennemy->move_speed = 40;
     sfSprite_setTexture(ennemy->sprite, _gm->game_texture, sfFalse);
-    sfSprite_setTextureRect(ennemy->sprite, ennemy->rect);
     sfSprite_setPosition(ennemy->sprite, *ennemy->stats->position);
     return ennemy;
 }
