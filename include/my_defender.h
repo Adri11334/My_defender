@@ -9,6 +9,7 @@
 #define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
+    #include  <stdlib.h>
 
     #ifndef MY_H_
         #include "my.h"
@@ -86,4 +87,8 @@
 
     void clear_previous_buttons(game_t *_gm);
     void print_hello(void);
+
+    layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim);
+    parallax_t *parallax_init_layer(void);
+    void display_parallax(game_t *_gm);
 #endif /* !MY_DEFENDER_H_ */
