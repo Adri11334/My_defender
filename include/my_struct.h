@@ -34,14 +34,15 @@
     } scene_t;
 
     typedef struct ennemy_s {
+        direction_t direction;
         ennemy_type_t type;
         dimension_t *stats;
         sfSprite *sprite;
+        sfVector2f n_pos;
         float clock_rate;
-        sfVector2f pos;
         sfIntRect rect;
         sfClock *clock;
-        int speed;
+        int gap;
         int life;
     } ennemy_t;
 

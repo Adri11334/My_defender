@@ -79,6 +79,11 @@
     int map_block_is_hover(sfRenderWindow *window, sfEvent *event, \
     map_block_t *block, dimension_t **actual_clicked);
 
+    void display_ennemy(game_t *_gm, ennemy_t *ennemy);
+
+    sfVector2f *spawner_position(char *map);
+    ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type);
+
     button_t *button_menu_create(char *text, float posx, float posy, \
     sfColor _color);
 

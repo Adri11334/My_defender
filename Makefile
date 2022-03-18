@@ -13,7 +13,9 @@ SRC			=	src/button/button_destroy.c				\
 				src/callbacks/callbacks.c				\
 				src/callbacks/cb_print_hello.c			\
 				src/display/display_button.c			\
+				src/display/display_ennemy.c			\
 				src/display/display_map.c				\
+				src/ennemis/ennemis_gen.c				\
 				src/events/event_quit_game.c			\
 				src/events/events.c						\
 				src/in_game/in_game_display_buttons.c	\
@@ -33,6 +35,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/text/text_init.c					\
 				src/towers/towers_init.c				\
 				src/utils/dimension.c					\
+				src/utils/get_spawner.c					\
 				src/destroyer.c							\
 				src/window.c							\
 

@@ -9,6 +9,8 @@
 
 void scene_game_call(game_t *game_manager)
 {
+    ennemy_t *ennemy = ennemy_create(game_manager, EARTH_GOLEM);
+
     map_load_blocks(game_manager);
     setup_ingame_menu(game_manager);
     while (sfRenderWindow_isOpen(game_manager->window) \
@@ -17,6 +19,7 @@ void scene_game_call(game_t *game_manager)
         sfRenderWindow_clear(game_manager->window, (sfColor){52, 73, 94,1.0});
         diplay_map_blocks(game_manager);
         diplay_game_buttons(game_manager);
+        display_ennemy(game_manager, ennemy);
         sfRenderWindow_display(game_manager->window);
     }
 }
