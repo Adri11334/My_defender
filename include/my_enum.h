@@ -64,6 +64,16 @@
         ENDED,
     } game_status_t;
 
+    typedef enum layer_type_e {
+        GROUND,
+        TREES,
+        HILLSO,
+        HILLST,
+        CLOUDS,
+        ROCKS,
+        SKY,
+    } layer_type_t;
+
     typedef enum directioons_e {
         TOP,
         RIGHT,

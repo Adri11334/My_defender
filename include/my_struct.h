@@ -26,6 +26,30 @@
         sfVector2f *position;
     } dimension_t;
 
+    typedef struct layer_s {
+        int range;
+        int damage;
+        int max_frame;
+        int current_frame;
+        float clock_rate;
+        sfSprite *sprite;
+        sfIntRect *rect;
+        sfClock *clock;
+        sfTexture *texture;
+        layer_type_t type;
+        dimension_t *dim;
+    } layer_t;
+
+    typedef struct prallax_s {
+        layer_t *ground;
+        layer_t *trees;
+        layer_t *hillso;
+        layer_t *hillst;
+        layer_t *clouds;
+        layer_t *rocks;
+        layer_t *sky;
+    } parallax_t;
+
     typedef struct scene_s {
         linked_list *blocks;
         linked_list *buttons;
@@ -54,6 +78,7 @@
         game_status_t status;
         sfRenderWindow *window;
         sfTexture *game_texture;
+        parallax_t *parallax;
         scene_t *menu_scene;
         scene_t *game_scene;
         dimension_t *actual_clicked_button;
@@ -93,5 +118,7 @@
         dimension_t *dimension;
         sfSprite *sprite;
     } map_block_t;
+
+
 
 #endif /* !MY_STRUCT_H_ */
