@@ -31,6 +31,8 @@
         linked_list *buttons;
         linked_list *entitys;
         linked_list *panels;
+        sfClock *scene_clock;
+        float clock_rate;
     } scene_t;
 
     typedef struct ennemy_s {

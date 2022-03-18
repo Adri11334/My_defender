@@ -57,6 +57,7 @@ ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type)
     ennemy->gap = 120;
     ennemy->move_speed = 40;
     sfSprite_setTexture(ennemy->sprite, _gm->game_texture, sfFalse);
+    sfSprite_setTextureRect(ennemy->sprite, ennemy->rect);
     sfSprite_setPosition(ennemy->sprite, *ennemy->stats->position);
     return ennemy;
 }

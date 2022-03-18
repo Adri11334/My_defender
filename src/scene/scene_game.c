@@ -9,8 +9,7 @@
 
 void scene_game_call(game_t *game_manager)
 {
-    game_manager->game_scene->entitys = init_list(ennemy_create(game_manager, EARTH_GOLEM));
-
+    init_ennemys(game_manager);
     map_load_blocks(game_manager);
     setup_ingame_menu(game_manager);
     while (sfRenderWindow_isOpen(game_manager->window) \
