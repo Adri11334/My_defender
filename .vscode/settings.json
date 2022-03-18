@@ -6,6 +6,7 @@
         "stdlib.h": "c",
         "stddef.h": "c",
         "my_defender.h": "c",
-        "my.h": "c"
+        "my.h": "c",
+        "stdbool.h": "c"
     }
 }

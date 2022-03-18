@@ -27,6 +27,7 @@
         #include "my_struct.h"
     #endif /* !MY_STRUCT_H_ */
 
+
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
     int main_window(char **args);
@@ -63,6 +64,8 @@
     void init_menu_buttons(game_t *_gm);
     void diplay_menu_buttons(game_t *_gm);
 
+    void setup_ingame_menu(game_t *_gm);
+
     char *get_and_check_map(char *filepath);
 
     map_block_t *map_block_create(dimension_t *dimension, block_type_t type, \
@@ -70,6 +73,7 @@
     void map_load_blocks(game_t *_gm);
 
     void diplay_map_blocks(game_t *_gm);
+    void diplay_game_buttons(game_t *_gm);
     map_block_t *map_check_road_type(game_t *_gm, dimension_t *dims, \
     int char_i);
     map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, \
@@ -77,15 +81,30 @@
     int map_block_is_hover(sfRenderWindow *window, sfEvent *event, \
     map_block_t *block, dimension_t **actual_clicked);
 
+    void init_ennemys(game_t *_gm);
+    void spawn_new_ennemys(game_t *_gm);
+    void display_ennemy(game_t *_gm, ennemy_t *ennemy);
+    void ennemy_move(game_t *_gm, ennemy_t *ennemy);
+    void ennemy_display_manager(game_t *_gm);
+    sfVector2f *spawner_position(char *map);
+    ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type);
+    void destroy_ennemy(ennemy_t *ennemy);
+
     button_t *button_menu_create(char *text, float posx, float posy, \
     sfColor _color);
 
     int tower_set_range(tower_type_t type, int tower_level);
     int tower_set_damages(tower_type_t type, int tower_level);
+    void *get_correct_tower_callback(tower_type_t type);
     tower_t *tower_create(dimension_t *dimension, tower_type_t type, \
     game_t *_gm);
 
-    void clear_previous_buttons(game_t *_gm);
+    void add_update_earth_tower(game_t *_gm);
+    void add_update_sand_tower(game_t *_gm);
+    void add_update_ice_tower(game_t *_gm);
+    void add_update_fire_tower(game_t *_gm);
+
+    void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
 
     layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim);

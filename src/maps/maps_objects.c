@@ -41,10 +41,14 @@ int block_is_road(sfIntRect *rect, block_type_t type)
     switch (type) {
         case BLOCK_ROAD_VERT: rect->left = 0; rect->top = 120; return 1;
         case BLOCK_ROAD_HORI: rect->left = 120; rect->top = 0; return 1;
-        case BLOCK_ROAD_TOP_LEFT_CORNER: rect->left = 240; rect->top = 240; return 1;
-        case BLOCK_ROAD_TOP_RIGHT_CORNER: rect->left = 0; rect->top = 240; return 1;
-        case BLOCK_ROAD_BOTTOM_LEFT_CORNER: rect->left = 240; rect->top = 0; return 1;
-        case BLOCK_ROAD_BOTTOM_RIGHT_CORNER: rect->left = 0; rect->top = 0; return 1;
+        case BLOCK_ROAD_TOP_LEFT_CORNER:
+            rect->left = 240; rect->top = 240; return 1;
+        case BLOCK_ROAD_TOP_RIGHT_CORNER:
+            rect->left = 0; rect->top = 240; return 1;
+        case BLOCK_ROAD_BOTTOM_LEFT_CORNER:
+            rect->left = 240; rect->top = 0; return 1;
+        case BLOCK_ROAD_BOTTOM_RIGHT_CORNER:
+            rect->left = 0; rect->top = 0; return 1;
         case BLOCK_ROAD_X_CORNER: rect->left = 120; rect->top = 120; return 1;
         default: return 0;
     }

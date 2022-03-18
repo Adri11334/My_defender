@@ -5,6 +5,7 @@
 ** ingame_menu
 */
 
+#include <stdlib.h>
 #include "my_defender.h"
 
 button_t *button_ingamemenu_create(char *text, float posx, float posy, \
@@ -31,18 +32,22 @@ void setup_ingame_menu(game_t *_gm)
     button_t *pause = NULL;
     button_t *earth_tower = NULL;
     button_t *ice_tower = NULL;
-    button_t *sand_tower =NULL;
-    button_t *fire_tower =NULL;
+    button_t *sand_tower = NULL;
+    button_t *fire_tower = NULL;
 
-    clear_previous_buttons(_gm);
+//    clear_previous_buttons(_gm);
     pause = button_ingamemenu_create("PAUSE", 1710, 60, sfWhite);
     earth_tower = button_ingamemenu_create("ET", 1500, 690, sfMagenta);
+    earth_tower->onClick = &add_update_earth_tower;
     ice_tower = button_ingamemenu_create("IT", 1710, 690, sfCyan);
+    ice_tower->onClick = &add_update_ice_tower;
     sand_tower = button_ingamemenu_create("ST", 1500, 900, sfYellow);
+    sand_tower->onClick = &add_update_sand_tower;
     fire_tower = button_ingamemenu_create("FT", 1710, 900, sfRed);
-    _gm->current_buttons = init_list(pause);
-    push_node(&_gm->current_buttons, earth_tower);
-    push_node(&_gm->current_buttons, ice_tower);
-    push_node(&_gm->current_buttons, sand_tower);
-    push_node(&_gm->current_buttons, fire_tower);
+    fire_tower->onClick = &add_update_fire_tower;
+    _gm->game_scene->buttons = init_list(pause);
+    push_node(&_gm->game_scene->buttons, earth_tower);
+    push_node(&_gm->game_scene->buttons, ice_tower);
+    push_node(&_gm->game_scene->buttons, sand_tower);
+    push_node(&_gm->game_scene->buttons, fire_tower);
 }

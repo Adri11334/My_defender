@@ -36,7 +36,7 @@ map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, int char_i)
     if (dims->position->x == 0)
         if (dims->position->y == 0)
             return map_block_create(dims, BLOCK_BORDER_LT_CORNER, _gm);
-        else if (dims->position->y == 950)
+        else if (dims->position->y == 960)
             return map_block_create(dims, BLOCK_BORDER_LB_CORNER, _gm);
         else
             return map_block_create(dims, BLOCK_BORDER_LEFT, _gm);
@@ -45,7 +45,7 @@ map_block_t *map_check_border_type(game_t *_gm, dimension_t *dims, int char_i)
             return map_block_create(dims, BLOCK_BORDER_RT_CORNER, _gm);
         else
             return map_block_create(dims, BLOCK_BORDER_TOP, _gm);
-    if (dims->position->y == 950)
+    if (dims->position->y == 960)
         if (dims->position->x == 1320)
             return map_block_create(dims, BLOCK_BORDER_RB_CORNER, _gm);
         else

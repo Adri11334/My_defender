@@ -11,13 +11,19 @@ sfFont *font_import(font_t font)
 {
     switch (font) {
         case ROBOTO_LIGHT: break;
+            return sfFont_createFromFile("assets/fonts/rbt_light.ttf");
         case ROBOTO_ITALIC: break;
+            return sfFont_createFromFile("assets/fonts/rbt_italic.ttf");
         case ROBOTO_THIN: break;
+            return sfFont_createFromFile("assets/fonts/rbt_thin.ttf");
         case ROBOTO_REGULAR:
-            return sfFont_createFromFile("assets/fonts/Roboto-Regular.ttf");
+            return sfFont_createFromFile("assets/fonts/rbt_regular.ttf");
         case ROBOTO_NORMAL: break;
+            return sfFont_createFromFile("assets/fonts/rbt_black.ttf");
         case ROBOTO_MEDIUM: break;
+            return sfFont_createFromFile("assets/fonts/rbt_medium.ttf");
         case ROBOTO_BOLD: break;
+            return sfFont_createFromFile("assets/fonts/rbt_bold.ttf");
     }
     return NULL;
 }
