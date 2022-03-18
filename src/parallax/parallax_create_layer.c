@@ -7,10 +7,11 @@
 
 #include "my_defender.h"
 
-layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim)
+layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim, \
+int offset)
 {
-    printf("creating layer\n");
     layer_t *layer = malloc(sizeof(layer_t));
+
     layer->rect = malloc(sizeof(sfIntRect));
     if (layer == NULL || layer->rect == NULL)
         return NULL;
@@ -24,9 +25,7 @@ layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim)
     layer->clock = sfClock_create();
     layer->clock_rate = 1;
     layer->dim = dim;
-    layer->max_frame = 1;
-    layer->current_frame = 1;
-
+    layer->offset = offset;
     sfSprite_setTexture(layer->sprite, layer->texture, sfFalse);
     sfSprite_setTextureRect(layer->sprite, *layer->rect);
     sfSprite_setPosition(layer->sprite, *dim->position);

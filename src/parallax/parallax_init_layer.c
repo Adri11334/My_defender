@@ -7,21 +7,25 @@
 
 #include "my_defender.h"
 
-parallax_t *parallax_init_layer(void)
+void parallax_init_layer(game_t *_gm)
 {
     dimension_t *dim = NULL;
-    parallax_t *menu = NULL;
 
     dim = dimension_create(3840, 1080, 0, 0);
-    menu = malloc(sizeof(parallax_t));
-    if (!dim || !menu)
+    if (!dim)
         return NULL;
-    menu->ground = layer_create("./assets/parallax/1Ground.png", GROUND, dim);
-    menu->trees = layer_create("./assets/parallax/2Trees.png", TREES, dim);
-    menu->hillso = layer_create("./assets/parallax/3Hillso.png", HILLSO, dim);
-    menu->hillst = layer_create("./assets/parallax/4Hillst.png", HILLST, dim);
-    menu->clouds = layer_create("./assets/parallax/5Clouds.png", CLOUDS, dim);
-    menu->rocks = layer_create("./assets/parallax/6Rocks.png", ROCKS, dim);
-    menu->sky = layer_create("./assets/parallax/7Sky.png", SKY, dim);
-    return menu;
+    _gm->menu_scene->panels = \
+    init_list(layer_create("./assets/parallax/1Ground.png", GROUND, dim, 14));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/2Trees.png", TREES, dim, 12));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/3Hillso.png", HILLSO, dim, 10));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/4Hillst.png", HILLST, dim, 8));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/5Clouds.png", CLOUDS, dim, 6));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/6Rocks.png", ROCKS, dim, 4));
+    push_node(&_gm->menu_scene->panels, \
+    layer_create("./assets/parallax/7Sky.png", SKY, dim, 2));
 }
