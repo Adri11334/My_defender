@@ -82,11 +82,11 @@ void ennemy_display_manager(game_t *_gm)
         if ((int)ennemy->stats->position->x % 120 == 0
         && (int)ennemy->stats->position->y % 120 == 0)
             ennemy_move(_gm, ennemy);
-        ennemy = enemies->data;
-        check_an_enemy(_gm, ennemy);
         if (ennemy->direction == FINISH) {
             destroy_ennemy(ennemy);
-            delete_node(&_gm->game_scene->entitys, _gm->game_scene->entitys);
+            delete_node(&_gm->game_scene->entitys, enemies);
+        } else {
+            check_an_enemy(_gm, ennemy);
         }
     }
     back_to_start(&enemies);
