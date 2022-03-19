@@ -37,6 +37,7 @@ void setup_ingame_menu(game_t *_gm)
 
 //    clear_previous_buttons(_gm);
     pause = button_ingamemenu_create("PAUSE", 1710, 60, sfWhite);
+    pause->onClick = &game_pause_clicked;
     earth_tower = button_ingamemenu_create("ET", 1500, 690, sfMagenta);
     earth_tower->onClick = &add_update_earth_tower;
     ice_tower = button_ingamemenu_create("IT", 1710, 690, sfCyan);

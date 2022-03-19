@@ -52,17 +52,22 @@
     void scene_game_call(game_t *game_manager);
     void scene_how_to_play_call(game_t *game_manager);
     void scene_settings_call(game_t *game_manager);
+    void scene_pause_call(game_t *game_manager);
 
     void menu_play_clicked(game_t *_gm);
     void menu_settings_clicked(game_t *_gm);
     void menu_ht_clicked(game_t *_gm);
     void menu_quit_clicked(game_t *_gm);
+    void game_pause_clicked(game_t *_gm);
 
     void analyse_events(game_t *game_manager);
     void event_quit_game(game_t *game_manager);
 
     void init_menu_buttons(game_t *_gm);
     void diplay_menu_buttons(game_t *_gm);
+
+    void menu_pause_create(game_t *_gm);
+    void display_pause(game_t *_gm);
 
     void setup_ingame_menu(game_t *_gm);
 

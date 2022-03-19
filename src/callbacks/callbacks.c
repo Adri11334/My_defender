@@ -26,3 +26,9 @@ void menu_quit_clicked(game_t *_gm)
 {
     _gm->status = ENDED;
 }
+
+void game_pause_clicked(game_t *_gm)
+{
+    _gm->status = PAUSE;
+    printf("pause activated\n");
+}
