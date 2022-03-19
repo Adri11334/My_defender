@@ -104,6 +104,8 @@
     void add_update_ice_tower(game_t *_gm);
     void add_update_fire_tower(game_t *_gm);
 
+    void tower_manager(game_t *_gm, tower_t *tower);
+
     void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
 
