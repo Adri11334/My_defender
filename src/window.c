@@ -20,7 +20,7 @@ game_t *init_game(void)
         return NULL;
     game_manager->status = MENU;
     game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
-    sfResize, NULL);
+    sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(game_manager->window, 60);
     game_manager->game_texture = \
     sfTexture_createFromFile("assets/image/temp_main_tilesheet_2.png", &rect);
