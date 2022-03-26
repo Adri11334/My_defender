@@ -6,7 +6,7 @@
 */
 
 #ifndef MY_STRUCT_H_
-#define MY_STRUCT_H_
+    #define MY_STRUCT_H_
 
     #ifndef MY_DEFENDER_H_
         #include "my_defender.h"
