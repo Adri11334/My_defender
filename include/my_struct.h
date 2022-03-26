@@ -59,6 +59,7 @@
         sfIntRect rect;
         int gap;
         int life;
+        sfText *life_text;
     } ennemy_t;
 
     typedef struct game_s {

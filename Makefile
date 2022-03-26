@@ -40,6 +40,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/scene/scene_settings.c				\
 				src/text/text_destroy.c					\
 				src/text/text_init.c					\
+				src/towers/towers_focus.c				\
 				src/towers/towers_init.c				\
 				src/utils/dimension.c					\
 				src/utils/get_spawner.c					\
