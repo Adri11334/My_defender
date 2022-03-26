@@ -52,7 +52,7 @@ int main_window(char **args)
             case HOW_TO_PLAY: scene_how_to_play_call(game_manager); break;
             case SETTINGS: scene_settings_call(game_manager); break;
             case GAME: scene_game_call(game_manager); break;
-            case PAUSE: scene_pause_call(game_manager); break;
+            case PAUSE: scene_game_call(game_manager); break;
             default: game_manager->status = ENDED; break;
         }
     }

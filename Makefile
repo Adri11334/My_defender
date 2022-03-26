@@ -43,7 +43,6 @@ SRC			=	src/button/button_destroy.c				\
 				src/scene/scene_game.c					\
 				src/scene/scene_how_to.c				\
 				src/scene/scene_menu.c					\
-				src/scene/scene_pause.c					\
 				src/scene/scene_settings.c				\
 				src/text/text_destroy.c					\
 				src/text/text_init.c					\

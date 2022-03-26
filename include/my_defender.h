@@ -52,7 +52,6 @@
     void scene_game_call(game_t *game_manager);
     void scene_how_to_play_call(game_t *game_manager);
     void scene_settings_call(game_t *game_manager);
-    void scene_pause_call(game_t *game_manager);
 
     void menu_play_clicked(game_t *_gm);
     void menu_settings_clicked(game_t *_gm);
