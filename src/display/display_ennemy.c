@@ -79,6 +79,9 @@ void ennemy_display_manager(game_t *_gm)
         if (!enemies->data)
             continue;
         ennemy = enemies->data;
+        sfText_setPosition(ennemy->life_text, *ennemy->stats->position);
+        sfText_setString(ennemy->life_text, my_to_str(ennemy->life));
+        sfRenderWindow_drawText(_gm->window, ennemy->life_text, NULL);
         if ((int)ennemy->stats->position->x % 120 == 0
         && (int)ennemy->stats->position->y % 120 == 0)
             ennemy_move(_gm, ennemy);

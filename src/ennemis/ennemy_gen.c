@@ -53,6 +53,7 @@ ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type)
         case EARTH_GOLEM: ennemy->life = 100; break;
         case FIRE_GOLEM: ennemy->life = 100; break;
     }
+    ennemy->life_text = text_create(my_to_str(ennemy->life), ROBOTO_REGULAR, 20, ennemy->stats);
     ennemy->anim_speed = 70;
     ennemy->gap = 120;
     ennemy->move_speed = 40;

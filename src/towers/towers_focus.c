@@ -5,35 +5,62 @@
 ** towers_focus
 */
 
+#include <stdbool.h>
+
 #include "my_defender.h"
+
+dimension_t *get_tower_range(tower_t *tower)
+{
+    float sizex = 0;
+    float sizey = 0;
+    float posx = 0;
+    float posy = 0;
+
+    if (tower == NULL || tower->dimension == NULL)
+        return NULL;
+    sizex = tower->dimension->size->x + ((tower->range * 120) * 2);
+    sizey = tower->dimension->size->y + ((tower->range * 120) * 2);
+    posx = tower->dimension->position->x - (tower->range * 120);
+    posy = tower->dimension->position->y - (tower->range * 120);
+    return dimension_create(sizex, sizey, posx, posy);
+}
+
+bool ennemy_in_tower_range(dimension_t *ennemy, dimension_t *tower)
+{
+    if (ennemy->position->x <= tower->position->x + tower->size->x
+        && ennemy->position->x >= tower->position->x)
+        if (ennemy->position->y <= tower->position->y + tower->size->y
+            && ennemy->position->y >= tower->position->y)
+            return true;
+    return false;
+}
+
+void shoot_ennemy(ennemy_t *ennemy, tower_t *tower)
+{
+    dimension_t *range_dim = NULL;
+    sfTime time = sfClock_getElapsedTime(tower->clock);
+    float milli_seconds = time.microseconds / 1000;
+
+    if ((range_dim = get_tower_range(tower)) == NULL)
+        return;
+    if (ennemy_in_tower_range(ennemy->stats, range_dim)) {
+        if (milli_seconds > tower->clock_rate) {
+            ennemy->life -= tower->damage;
+            sfClock_restart(tower->clock);
+        }
+    }
+    dimension_destroy(range_dim);
+}
 
 void tower_manager(game_t *_gm, tower_t *tower)
 {
     linked_list *enemies = _gm->game_scene->entitys;
     ennemy_t *ennemy = NULL;
-    ennemy_t *stock_ennemy = NULL;
-    int current_range = 0;
-    int min_range = 0;
 
-    cyan_header("New iteration");
     for (; enemies != NULL; enemies = enemies->next) {
         if (!enemies->data)
             continue;
-        ennemy = enemies->data;
-        current_range = (ennemy->stats->position->x - (ennemy->stats->size->x / 2)) - tower->dimension->size->x - (tower->dimension->size->x / 2);
-        current_range -= (ennemy->stats->position->y - (ennemy->stats->size->y / 2)) - tower->dimension->size->y - (tower->dimension->size->y / 2);
-        my_printf("%d / %d (%d)\n", ((int)ABSOLUTE(current_range)), min_range, tower->range);
-        if ((int)ABSOLUTE(current_range) < tower->range)
-            min_range = (int)ABSOLUTE(current_range);
-        if ((int)ABSOLUTE(current_range) <= min_range) {
-            stock_ennemy = ennemy;
-            stock_ennemy->anim_speed = 1;
-            min_range = (int)ABSOLUTE(current_range);
-            write_purple("-> taked man\n\n");
-        }
-        if (ennemy != stock_ennemy) {
-            ennemy->anim_speed = 500;
-        }
+        shoot_ennemy(enemies->data, tower);
     }
     back_to_start(&enemies);
     sfRenderWindow_drawSprite(_gm->window, tower->sprite, NULL);

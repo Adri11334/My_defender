@@ -61,13 +61,13 @@ game_t *_gm)
     tower->rect = tower_get_corect_rect(tower_dims, type);
     tower->type = type;
     tower->range = tower_set_range(type, 1);
-    tower->range = tower_set_damages(type, 1);
+    tower->damage = tower_set_damages(type, 1);
     tower->sprite = sfSprite_create();
     sfSprite_setTexture(tower->sprite, _gm->game_texture, sfFalse);
     sfSprite_setTextureRect(tower->sprite, *tower->rect);
     sfSprite_setPosition(tower->sprite, *tower_dims->position);
     tower->clock = sfClock_create();
-    tower->clock_rate = (float)1;
+    tower->clock_rate = (float)500;
     tower->dimension = tower_dims;
     tower->max_frame = (int)1;
     tower->current_frame = (int)1;
