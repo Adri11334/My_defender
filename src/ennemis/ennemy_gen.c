@@ -36,6 +36,17 @@ dimension_t *ennemy_correct_dims(game_t *_gm, ennemy_type_t type)
     return dims;
 }
 
+void ennemy_define_life(ennemy_t *ennemy, ennemy_type_t type)
+{
+    switch (type) {
+        case ICE_GOLEM: ennemy->life = 100; break;
+        case EARTH_GOLEM: ennemy->life = 50; break;
+        case FIRE_GOLEM: ennemy->life = 75; break;
+    }
+    ennemy->life_text = text_create(my_to_str(ennemy->life), \
+    ROBOTO_REGULAR, 20, ennemy->stats);
+}
+
 ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type)
 {
     ennemy_t *ennemy = malloc(sizeof(ennemy_t));
@@ -48,12 +59,7 @@ ennemy_t *ennemy_create(game_t *_gm, ennemy_type_t type)
     ennemy->rect = ennemy_correct_rect(type);
     ennemy->anim_clock = sfClock_create();
     ennemy->move_clock = sfClock_create();
-    switch (type) {
-        case ICE_GOLEM: ennemy->life = 100; break;
-        case EARTH_GOLEM: ennemy->life = 100; break;
-        case FIRE_GOLEM: ennemy->life = 100; break;
-    }
-    ennemy->life_text = text_create(my_to_str(ennemy->life), ROBOTO_REGULAR, 20, ennemy->stats);
+    ennemy_define_life(ennemy, type);
     ennemy->anim_speed = 70;
     ennemy->gap = 120;
     ennemy->move_speed = 40;

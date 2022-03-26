@@ -40,10 +40,21 @@ int tower_set_range(tower_type_t type, int tower_level)
 int tower_set_damages(tower_type_t type, int tower_level)
 {
     switch (type) {
-        case EARTH_TOWER: return (tower_level * 15);
-        case ICE_TOWER: return (tower_level  * 5);
-        case SAND_TOWER: return (tower_level * 5);
+        case EARTH_TOWER: return (tower_level * 5);
+        case ICE_TOWER: return (tower_level  * 10);
+        case SAND_TOWER: return (tower_level * 10);
         case FIRE_TOWER: return (tower_level * 20);
+        default: return 0;
+    }
+}
+
+float set_tower_shoot_rate(tower_type_t type, int tower_level)
+{
+    switch (type) {
+        case EARTH_TOWER: return (tower_level > 1 ? 400 : 550);
+        case ICE_TOWER: return (tower_level > 1 ? 400 : 550);
+        case SAND_TOWER: return (tower_level > 1 ? 550 : 700);
+        case FIRE_TOWER: return (tower_level > 2 ? 600 : 750);
         default: return 0;
     }
 }
