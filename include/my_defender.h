@@ -73,6 +73,8 @@
     void menu_pause_create(game_t *_gm);
     layer_t *pause_create(char *name, game_status_t type, dimension_t *dim);
     void display_pause(game_t *_gm);
+    void menu_title_create(game_t *_gm);
+    void display_title(game_t *_gm);
 
     void setup_ingame_menu(game_t *_gm);
 

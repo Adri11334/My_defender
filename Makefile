@@ -19,6 +19,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/display/display_parallax.c			\
 				src/display/display_parallax.c			\
 				src/display/display_pause.c				\
+				src/display/display_title.c				\
 				src/ennemis/ennemy_gen.c				\
 				src/ennemis/ennemy_destroy.c			\
 				src/ennemis/ennemy_move.c				\
@@ -33,6 +34,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/maps/maps_road_type.c				\
 				src/maps/maps_validity.c				\
 				src/menu/menu_create_buttons.c			\
+				src/menu/menu_create_title.c					\
 				src/menu/menu_display_button.c			\
 				src/menu/menu_pause_create.c			\
 				src/menu/menu_pause_display_buttons.c	\

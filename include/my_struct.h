@@ -44,6 +44,7 @@
         linked_list *entitys;
         linked_list *panels;
         linked_list *pause;
+        linked_list *title;
         sfClock *scene_clock;
         float clock_rate;
     } scene_t;
