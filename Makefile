@@ -9,6 +9,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/button/button_clic_detection.c		\
 				src/button/button_init.c				\
 				src/button/button_interactions.c		\
+				src/callbacks/callbacks_pause.c			\
 				src/callbacks/callbacks_tower.c			\
 				src/callbacks/callbacks.c				\
 				src/callbacks/cb_print_hello.c			\
@@ -17,6 +18,8 @@ SRC			=	src/button/button_destroy.c				\
 				src/display/display_map.c				\
 				src/display/display_parallax.c			\
 				src/display/display_parallax.c			\
+				src/display/display_pause.c				\
+				src/display/display_title.c				\
 				src/ennemis/ennemy_gen.c				\
 				src/ennemis/ennemy_destroy.c			\
 				src/ennemis/ennemy_move.c				\
@@ -31,12 +34,16 @@ SRC			=	src/button/button_destroy.c				\
 				src/maps/maps_road_type.c				\
 				src/maps/maps_validity.c				\
 				src/menu/menu_create_buttons.c			\
+				src/menu/menu_create_title.c					\
 				src/menu/menu_display_button.c			\
+				src/menu/menu_pause_create.c			\
+				src/menu/menu_pause_display_buttons.c	\
 				src/parallax/parallax_create_layer.c	\
 				src/parallax/parallax_init_layer.c		\
 				src/scene/scene_game.c					\
 				src/scene/scene_how_to.c				\
 				src/scene/scene_menu.c					\
+				src/scene/scene_pause.c					\
 				src/scene/scene_settings.c				\
 				src/text/text_destroy.c					\
 				src/text/text_init.c					\

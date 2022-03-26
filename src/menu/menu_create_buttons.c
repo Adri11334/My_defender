@@ -34,16 +34,34 @@ void init_menu_buttons(game_t *_gm)
     button_t *how_to_play = NULL;
     button_t *quit = NULL;
 
-    play = button_menu_create("PLAY", 870, 150, sfGreen);
+    play = button_menu_create("PLAY", 870, 375, (sfColor){160, 132, 157, 255});
     play->onClick = menu_play_clicked;
-    settings = button_menu_create("SETTINGS", 870, 350, sfBlue);
+    settings = button_menu_create("SETTINGS", 870, 550, (sfColor){148, 124, 176, 255});
     settings->onClick = menu_settings_clicked;
-    how_to_play = button_menu_create("HOW TO PLAY", 870, 550, sfYellow);
+    how_to_play = button_menu_create("HOW TO PLAY", 870, 725, (sfColor){1, 1, 122, 255});
     how_to_play->onClick = menu_ht_clicked;
-    quit = button_menu_create("QUIT", 870, 750, sfRed);
+    quit = button_menu_create("QUIT", 870, 900, (sfColor){101, 198, 187, 255});
     quit->onClick = menu_quit_clicked;
     _gm->menu_scene->buttons = init_list(play);
     push_node(&_gm->menu_scene->buttons, settings);
     push_node(&_gm->menu_scene->buttons, how_to_play);
     push_node(&_gm->menu_scene->buttons, quit);
+}
+
+
+void init_pause_buttons(game_t *_gm)
+{
+    button_t *resume = NULL;
+    button_t *quit = NULL;
+    button_t *menu = NULL;
+
+    resume = button_menu_create("RESUME\n game", 870, 300, (sfColor){174, 87, 0, 255});
+    resume->onClick = menu_play_clicked;
+    quit = button_menu_create("QUIT\ngame", 870, 500, (sfColor){174, 87, 0, 255});
+    quit->onClick = menu_quit_clicked;
+    menu = button_menu_create("MENU", 870, 700, (sfColor){174, 87, 0, 255});
+    menu->onClick = pause_menu_clicked;
+    _gm->menu_scene->pause_buttons = init_list(resume);
+    push_node(&_gm->menu_scene->pause_buttons, quit);
+    push_node(&_gm->menu_scene->pause_buttons, menu);
 }

@@ -40,8 +40,11 @@
     typedef struct scene_s {
         linked_list *blocks;
         linked_list *buttons;
+        linked_list *pause_buttons;
         linked_list *entitys;
         linked_list *panels;
+        linked_list *pause;
+        linked_list *title;
         sfClock *scene_clock;
         float clock_rate;
     } scene_t;
