@@ -39,4 +39,5 @@ void menu_pause_create(game_t *_gm)
         return;
     _gm->menu_scene->pause = \
     init_list(pause_create("./assets/image/menu_pause.png", PAUSE, dim));
+    printf("the pause has been created\n");
 }

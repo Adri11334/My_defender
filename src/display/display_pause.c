@@ -9,7 +9,7 @@
 
 void display_pause(game_t *_gm)
 {
-    linked_list *pause = _gm->menu_scene->panels;
+    linked_list *pause = _gm->menu_scene->pause;
     layer_t *layer_p = NULL;
 
     for (; pause != NULL; pause = pause->next) {
@@ -18,5 +18,5 @@ void display_pause(game_t *_gm)
         layer_p = pause->data;
         sfRenderWindow_drawSprite(_gm->window, layer_p->sprite, NULL);
     }
-    back_to_start(&pause);
+    //back_to_start(&pause);
 }

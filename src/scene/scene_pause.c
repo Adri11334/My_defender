@@ -9,6 +9,7 @@
 
 void scene_pause_call(game_t *game_manager)
 {
+    menu_pause_create(game_manager);
     while (sfRenderWindow_isOpen(game_manager->window) \
     && game_manager->status == PAUSE) {
         analyse_events(game_manager);
