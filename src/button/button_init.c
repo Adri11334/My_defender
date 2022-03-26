@@ -9,7 +9,7 @@
 
 #include "my_defender.h"
 
-button_t *button_test_create()
+button_t *button_test_create(void)
 {
     dimension_t *button_dim = NULL;
     sfText *button_text = NULL;
