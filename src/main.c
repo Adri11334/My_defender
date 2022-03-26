@@ -14,3 +14,5 @@ int main(int argc, char **argv, char **env)
         return 84;
     return main_window(argv);
 }
+
+// ! F4./src/towers/towers_init.c:74 ./src/maps/maps_load_blocks.c:33
