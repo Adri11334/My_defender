@@ -9,6 +9,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/button/button_clic_detection.c		\
 				src/button/button_init.c				\
 				src/button/button_interactions.c		\
+				src/callbacks/callbacks_pause.c			\
 				src/callbacks/callbacks_tower.c			\
 				src/callbacks/callbacks.c				\
 				src/callbacks/cb_print_hello.c			\
@@ -34,6 +35,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/menu/menu_create_buttons.c			\
 				src/menu/menu_display_button.c			\
 				src/menu/menu_pause_create.c			\
+				src/menu/menu_pause_display_buttons.c	\
 				src/parallax/parallax_create_layer.c	\
 				src/parallax/parallax_init_layer.c		\
 				src/scene/scene_game.c					\

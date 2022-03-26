@@ -59,12 +59,16 @@
     void menu_ht_clicked(game_t *_gm);
     void menu_quit_clicked(game_t *_gm);
     void game_pause_clicked(game_t *_gm);
+    void pause_menu_clicked(game_t *_gm);
 
     void analyse_events(game_t *game_manager);
     void event_quit_game(game_t *game_manager);
 
     void init_menu_buttons(game_t *_gm);
     void diplay_menu_buttons(game_t *_gm);
+
+    void init_pause_buttons(game_t *_gm);
+    void display_pause_buttons(game_t *_gm);
 
     void menu_pause_create(game_t *_gm);
     layer_t *pause_create(char *name, game_status_t type, dimension_t *dim);

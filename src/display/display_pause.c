@@ -18,5 +18,5 @@ void display_pause(game_t *_gm)
         layer_p = pause->data;
         sfRenderWindow_drawSprite(_gm->window, layer_p->sprite, NULL);
     }
-    //back_to_start(&pause);
+    back_to_start(&pause);
 }
