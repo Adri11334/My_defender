@@ -10,7 +10,7 @@
 void scene_settings_call(game_t *game_manager)
 {
     while (sfRenderWindow_isOpen(game_manager->window) \
-    && game_manager->status == SETTINGS) {
+     && game_manager->status == SETTINGS) {
         analyse_events(game_manager);
         sfRenderWindow_clear(game_manager->window, \
         (sfColor){255, 73, 255, 255});

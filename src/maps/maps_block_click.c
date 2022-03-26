@@ -15,9 +15,9 @@ int map_block_hover_detection(sfVector2i m_pos, map_block_t *block)
     (block->dimension->position->y + block->dimension->size->y);
 
     if (clic_from_right_border_x < 0 \
-    && ABSOLUTE(clic_from_right_border_x) < block->dimension->size->x) {
+     && ABSOLUTE(clic_from_right_border_x) < block->dimension->size->x) {
         if (clic_from_top_border_y < 0 \
-        && ABSOLUTE(clic_from_top_border_y) < block->dimension->size->y) {
+         && ABSOLUTE(clic_from_top_border_y) < block->dimension->size->y) {
             return 1;
         }
     }
@@ -46,7 +46,7 @@ map_block_t *block, dimension_t **actual_clicked)
         if (block->status != CLICKED && *actual_clicked == block->dimension) {
             block->status = CLICKED;
         } else if (block->status == CLICKED \
-        && *actual_clicked != block->dimension) {
+         && *actual_clicked != block->dimension) {
             *actual_clicked = block->dimension;
         }
         return 1;
