@@ -25,28 +25,25 @@ char *fs_open_read_file(int fd, int size)
         return NULL;
     if (read_status == 0)
         return NULL;
-    if (read_status < size)
-        return NULL;
     return buffer;
 }
 
 ////////////////////////////////////////////////////////////
 //
 // get the content of a file
+// ! Upgraded version for defender only, without stat
 //
 // @param filepath the path to the file
 ////////////////////////////////////////////////////////////
 char *get_file_content(char const *filepath)
 {
-    struct stat file_stat = {0};
     char *content = NULL;
     int file_descriptor = 0;
     int file_size = 0;
 
     if (filepath == NULL)
         return NULL;
-    stat(filepath, &file_stat);
-    file_size = file_stat.st_size;
+    file_size = 500000;
     file_descriptor = open(filepath, O_RDONLY);
     content = fs_open_read_file(file_descriptor, file_size);
     if (content == NULL)

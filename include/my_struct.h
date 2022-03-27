@@ -56,6 +56,8 @@
         linked_list *panels;
         linked_list *pause;
         linked_list *title;
+        sfMusic *main_audio;
+        sfMusic *annexe_audio;
         sfClock *scene_clock;
         float clock_rate;
     } scene_t;
@@ -99,6 +101,7 @@
         sfSprite *sprite;
         bool isSprite;
         sfText *text;
+        sfMusic *clic_sound;
         void (*onClick) (game_t *_game_manager);
     } button_t;
 

@@ -30,6 +30,7 @@
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
     int main_window(char **args);
+    int display_help(void);
 
     dimension_t *dimension_create(float sizex, float sizey, \
     float positionx, float positiony);
@@ -78,6 +79,9 @@
     void menu_title_create(game_t *_gm);
     void display_title(game_t *_gm);
 
+    void money_manager(game_t *_gm);
+    void display_txt_imgs(game_t *_gm);
+
     void setup_ingame_menu(game_t *_gm);
     txt_img_t *create_money_goal(game_t *_gm);
 
@@ -123,6 +127,9 @@
 
     void clear_previous_buttons(scene_t *scene);
     void print_hello(void);
+
+    sfMusic *create_audio(char *music_path, bool loop);
+    void destroy_audio(sfMusic *music);
 
     layer_t *layer_create(char *name, layer_type_t type, dimension_t *dim, \
     int offset);
