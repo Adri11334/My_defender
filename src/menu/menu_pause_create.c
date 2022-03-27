@@ -7,7 +7,7 @@
 
 #include "my_defender.h"
 
-layer_t *pause_create(char *name, game_status_t type, dimension_t *dim)
+layer_t *pause_create(char *name, layer_type_t type, dimension_t *dim)
 {
     layer_t *layer = malloc(sizeof(layer_t));
 
