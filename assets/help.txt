@@ -2,7 +2,41 @@ USAGE
     ./my_defender [map]
 
 DESCRIPTIONS
-    Defender game,
+    Defender game, your goal is to defend your home from a golem invasion.
+    To do so, you are able to buy tower defense on the map, to shot the golem.
+    Be aware that the more the time pass the golem will appear BUT do not worry
+    your money will to.
+    You can also create you own map.
+    To do so, you need to create a file name mapx.txt (x is the number) in the
+    map file, and use the totarial at the end :).
+    Here is a little summary of what you need to know about the game:
+
+    The tower:
+        - EARTH TOWER
+            Cost: 500 dimonds
+            Damage caused: 5
+            Fire rate: 0.5 sec
+        - SAND TOWER
+            Cost: 750 dimonds
+            Damge caused: 10
+            Fire rate: 0.5 sec
+        - ICE TOWER
+            Cost: 1000 dimonds
+            Damage caused: 12
+            Fire rate: 0.7 sec
+        - FIRE TOWER
+            Cost: 1250 dimonds
+            Damage caused: 15
+            Fire rate: 0.7 sec
+
+
+    The golem:
+        - EARTH GOLEM
+            Life points: 50
+        - FIRE GOLEM
+            Life points: 75
+        - ICE GOLEM
+            Life points: 100
 
 MAP CREATION
     ' ' = empty point
@@ -11,3 +45,8 @@ MAP CREATION
     '-' = horizontal road
     '|' = vertical road
     '/' = cross road
+    '#' = border
+
+CREATORS:
+    Adrien VERMERSCH
+    Eléonore BONAVENTURE
