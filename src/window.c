@@ -13,47 +13,47 @@
 game_t *init_game(void)
 {
     sfVideoMode mode = { 1920, 1080, 32 };
-    game_t *game_manager = malloc(sizeof(game_t));
+    game_t *_gm = malloc(sizeof(game_t));
     sfIntRect rect = { 0, 0, 1920, 1080 };
 
-    if (game_manager == NULL)
+    if (_gm == NULL)
         return NULL;
-    game_manager->status = MENU;
-    game_manager->window = sfRenderWindow_create(mode, "OUR defender !", \
+    _gm->status = MENU;
+    _gm->window = sfRenderWindow_create(mode, "OUR defender !", \
     sfFullscreen, NULL);
-    sfRenderWindow_setFramerateLimit(game_manager->window, 60);
-    game_manager->game_texture = \
-    sfTexture_createFromFile("assets/image/temp_main_tilesheet.png", &rect);
-    game_manager->actual_clicked_button = NULL;
-    if (!game_manager->window) {
-        free(game_manager);
+    sfRenderWindow_setFramerateLimit(_gm->window, 60);
+    _gm->game_texture = \
+    sfTexture_createFromFile("assets/image/tilesheet.png", &rect);
+    _gm->menu_scene = malloc(sizeof(scene_t));
+    _gm->game_scene = malloc(sizeof(scene_t));
+    _gm->actual_clicked_button = NULL;
+    if (!_gm->window) {
+        free(_gm);
         return NULL;
     }
-    return game_manager;
+    return _gm;
 }
 
 int main_window(char **args)
 {
-    game_t *game_manager = init_game();
+    game_t *_gm = init_game();
 
     if (args[1] == NULL)
         return -1;
-    game_manager->current_map = get_and_check_map(args[1]);
-    if (game_manager->current_map == NULL)
+    _gm->current_map = get_and_check_map(args[1]);
+    if (_gm->current_map == NULL || _gm == NULL)
         return 84;
-    if (game_manager == NULL)
-        return 84;
-    while (game_manager->status != ENDED) {
-        switch (game_manager->status) {
+    while (_gm->status != ENDED) {
+        switch (_gm->status) {
             case LOADING: break;
-            case MENU: scene_menu_call(game_manager); break;
-            case HOW_TO_PLAY: scene_how_to_play_call(game_manager); break;
-            case SETTINGS: scene_settings_call(game_manager); break;
-            case GAME: scene_game_call(game_manager); break;
-            case PAUSE: break;
-            default: game_manager->status = ENDED; break;
+            case MENU: scene_menu_call(_gm); break;
+            case HOW_TO_PLAY: display_help(); _gm->status = ENDED; break;
+            case SETTINGS: scene_settings_call(_gm); break;
+            case GAME: scene_game_call(_gm); break;
+            case PAUSE: scene_game_call(_gm); break;
+            default: _gm->status = ENDED; break;
         }
     }
-    sfRenderWindow_destroy(game_manager->window);
+    sfRenderWindow_destroy(_gm->window);
     return 0;
 }

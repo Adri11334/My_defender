@@ -8,43 +8,62 @@
 #include <stdlib.h>
 #include "my_defender.h"
 
-button_t *button_ingamemenu_create(char *text, float posx, float posy, \
-sfColor _color)
+sfIntRect *malloc_rect(sfIntRect rect_base)
+{
+    sfIntRect *rect = malloc(sizeof(sfIntRect));
+
+    if (rect == NULL)
+        return NULL;
+    rect->left = rect_base.left;
+    rect->top = rect_base.top;
+    rect->width = rect_base.width;
+    rect->height = rect_base.height;
+    return rect;
+}
+
+button_t *btn_ig_create(sfIntRect btn_rect, float posx, \
+float posy, game_t *_gm)
 {
     dimension_t *button_dim = NULL;
-    sfText *button_text = NULL;
-    button_colors_t *button_colors = malloc(sizeof(button_colors_t));
+    sfIntRect *def_rect = NULL;
 
-    if (button_colors == NULL)
+    if (_gm == NULL)
         return NULL;
-    button_colors->normal = _color;
-    button_colors->idle = (sfColor){ _color.r, _color.g, _color.b, 155 };
-    button_colors->highlight = (sfColor){ _color.r, _color.g, _color.b, 155 };
-    button_colors->clicked = (sfColor){ _color.r, _color.g, _color.b, 100 };
-    button_colors->disable = (sfColor){ _color.r, _color.g, _color.b, 20 };
-    button_dim = dimension_create(120, 120, posx, posy);
-    button_text = text_create(text, ROBOTO_REGULAR, 20, button_dim);
-    return button_create(button_dim, button_colors, button_text, &print_hello);
+    def_rect = malloc_rect(btn_rect);
+    button_dim = dimension_create(240, 120, posx, posy);
+    return button_sprite_create(button_dim, _gm, def_rect, &print_hello);
+}
+
+button_t *create_pause_init_list(game_t *_gm)
+{
+    button_t *pause = NULL;
+
+    pause = btn_ig_create((sfIntRect){ 720, 840, 120, 120 }, \
+    1710, 60, _gm);
+    pause->onClick = &game_pause_clicked;
+    return pause;
 }
 
 void setup_ingame_menu(game_t *_gm)
 {
-    button_t *pause = NULL;
-    button_t *earth_tower = NULL;
-    button_t *ice_tower = NULL;
-    button_t *sand_tower = NULL;
-    button_t *fire_tower = NULL;
+    button_t *pause = create_pause_init_list(_gm);
+    button_t *e_tower = NULL;
+    button_t *i_tower = NULL;
+    button_t *s_tower = NULL;
+    button_t *f_tower = NULL;
 
-    clear_previous_buttons(_gm);
-    pause = button_ingamemenu_create("PAUSE", 1710, 60, sfWhite);
-    earth_tower = button_ingamemenu_create("ET", 1500, 690, sfMagenta);
-    earth_tower->onClick = &add_update_earth_tower;
-    ice_tower = button_ingamemenu_create("IT", 1710, 690, sfCyan);
-    sand_tower = button_ingamemenu_create("ST", 1500, 900, sfYellow);
-    fire_tower = button_ingamemenu_create("FT", 1710, 900, sfRed);
-    _gm->current_buttons = init_list(pause);
-    push_node(&_gm->current_buttons, earth_tower);
-    push_node(&_gm->current_buttons, ice_tower);
-    push_node(&_gm->current_buttons, sand_tower);
-    push_node(&_gm->current_buttons, fire_tower);
+    e_tower = btn_ig_create((sfIntRect){ 120, 840, 120, 240 }, 1500, 490, _gm);
+    e_tower->onClick = &add_update_earth_tower;
+    i_tower = btn_ig_create((sfIntRect){ 360, 840, 120, 240 }, 1710, 490, _gm);
+    i_tower->onClick = &add_update_ice_tower;
+    s_tower = btn_ig_create((sfIntRect){ 240, 840, 120, 240 }, 1500, 810, _gm);
+    s_tower->onClick = &add_update_sand_tower;
+    f_tower = btn_ig_create((sfIntRect){ 480, 840, 120, 240 }, 1710, 810, _gm);
+    f_tower->onClick = &add_update_fire_tower;
+    _gm->game_scene->buttons = init_list(pause);
+    _gm->game_scene->title = init_list(create_money_goal(_gm));
+    push_node(&_gm->game_scene->buttons, e_tower);
+    push_node(&_gm->game_scene->buttons, i_tower);
+    push_node(&_gm->game_scene->buttons, s_tower);
+    push_node(&_gm->game_scene->buttons, f_tower);
 }

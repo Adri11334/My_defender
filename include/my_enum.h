@@ -6,7 +6,7 @@
 */
 
 #ifndef MY_ENUM_H_
-#define MY_ENUM_H_
+    #define MY_ENUM_H_
 
     typedef enum font_e {
         ROBOTO_LIGHT,
@@ -64,4 +64,28 @@
         ENDED,
     } game_status_t;
 
-#endif /* !MY_ENUM_H_ */
+    typedef enum layer_type_e {
+        GROUND,
+        TREES,
+        HILLSO,
+        HILLST,
+        CLOUDS,
+        ROCKS,
+        SKY,
+    } layer_type_t;
+
+    typedef enum directioons_e {
+        TOP,
+        RIGHT,
+        DOWN,
+        LEFT,
+        FINISH,
+    } direction_t;
+
+    typedef enum ennemy_type_e {
+        ICE_GOLEM,
+        EARTH_GOLEM,
+        FIRE_GOLEM,
+    } ennemy_type_t;
+
+#endif/* !MY_ENUM_H_ */
