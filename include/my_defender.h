@@ -6,27 +6,26 @@
 */
 
 #ifndef MY_DEFENDER_H_
-#define MY_DEFENDER_H_
+    #define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
     #include  <stdlib.h>
 
     #ifndef MY_H_
         #include "my.h"
-    #endif /* !MY_H_ */
+    #endif/* !MY_H_ */
 
     #ifndef LINKED_LISTS_H_
         #include "linked_lists.h"
-    #endif /* !LINKED_LISTS_H_ */
+    #endif/* !LINKED_LISTS_H_ */
 
     #ifndef MY_ENUM_H_
         #include "my_enum.h"
-    #endif /* !MY_ENUM_H_ */
+    #endif/* !MY_ENUM_H_ */
 
     #ifndef MY_STRUCT_H_
         #include "my_struct.h"
-    #endif /* !MY_STRUCT_H_ */
-
+    #endif/* !MY_STRUCT_H_ */
 
     #define ABSOLUTE(nb) ((nb < 0) ? nb * -1 : nb)
 
@@ -80,6 +79,7 @@
     void display_title(game_t *_gm);
 
     void setup_ingame_menu(game_t *_gm);
+    txt_img_t *create_money_goal(game_t *_gm);
 
     char *get_and_check_map(char *filepath);
 
@@ -128,4 +128,4 @@
     int offset);
     void parallax_init_layer(game_t *_gm);
     void display_parallax(game_t *_gm);
-#endif /* !MY_DEFENDER_H_ */
+#endif/* !MY_DEFENDER_H_ */

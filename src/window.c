@@ -41,9 +41,7 @@ int main_window(char **args)
     if (args[1] == NULL)
         return -1;
     game_manager->current_map = get_and_check_map(args[1]);
-    if (game_manager->current_map == NULL)
-        return 84;
-    if (game_manager == NULL)
+    if (game_manager->current_map == NULL || game_manager == NULL)
         return 84;
     while (game_manager->status != ENDED) {
         switch (game_manager->status) {

@@ -55,7 +55,6 @@ void shoot_ennemy(ennemy_t *ennemy, tower_t *tower)
 void tower_manager(game_t *_gm, tower_t *tower)
 {
     linked_list *enemies = _gm->game_scene->entitys;
-    ennemy_t *ennemy = NULL;
 
     for (; enemies != NULL; enemies = enemies->next) {
         if (!enemies->data)

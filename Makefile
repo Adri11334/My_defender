@@ -28,13 +28,14 @@ SRC			=	src/button/button_destroy.c				\
 				src/in_game/in_game_display_buttons.c	\
 				src/in_game/ingame_menu.c				\
 				src/in_game/ingame_spawner.c			\
+				src/in_game/money_init.c				\
 				src/maps/maps_block_click.c				\
 				src/maps/maps_load_blocks.c				\
 				src/maps/maps_objects.c					\
 				src/maps/maps_road_type.c				\
 				src/maps/maps_validity.c				\
 				src/menu/menu_create_buttons.c			\
-				src/menu/menu_create_title.c					\
+				src/menu/menu_create_title.c			\
 				src/menu/menu_display_button.c			\
 				src/menu/menu_pause_create.c			\
 				src/menu/menu_pause_display_buttons.c	\
@@ -58,8 +59,8 @@ CRITERION	=	$(wildcard tests/*.c)
 OBJ			=	$(SRC:.c=.o)
 
 NAME		=	my_defender
-#-Werror
-CFLAGS		+=	-W -Wall -Wextra  -Wshadow -Wimplicit -pedantic
+
+CFLAGS		+=	-W -Werror
 
 LDFLAGS		+=	-L./lib -lutils
 LDFLAGS		+=	-L./lib -llinkedlist

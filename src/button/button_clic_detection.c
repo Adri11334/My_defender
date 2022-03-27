@@ -49,7 +49,7 @@ int button_is_hover(game_t *_gm, button_t *button)
     sfVector2i mouse_pos;
 
     if (_gm == NULL || button == NULL)
-        return;
+        return 84;
     mouse_pos = sfMouse_getPositionRenderWindow(_gm->window);
     if (button_hover_detection(mouse_pos, button) == 1) {
         return button_hovered(_gm, button);

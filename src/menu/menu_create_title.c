@@ -16,5 +16,4 @@ void menu_title_create(game_t *_gm)
         return;
     _gm->menu_scene->title = \
     init_list(pause_create("./assets/image/defender.png", MENU, dim));
-    printf("the title has been created\n");
 }

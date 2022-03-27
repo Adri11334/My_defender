@@ -61,6 +61,7 @@ int random_left()
         case 1: return 1680;
         case 2: return 1800;
     }
+    return 0;
 }
 
 int random_top()
@@ -70,6 +71,7 @@ int random_top()
         case 1: return 480;
         case 2: return 600;
     }
+    return 0;
 }
 
 sfIntRect block_get_corect_rect(dimension_t *dimension, block_type_t type)
