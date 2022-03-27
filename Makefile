@@ -44,7 +44,6 @@ SRC			=	src/button/button_destroy.c				\
 				src/parallax/parallax_init_layer.c		\
 				src/scene/audio_manager.c				\
 				src/scene/scene_game.c					\
-				src/scene/scene_how_to.c				\
 				src/scene/scene_menu.c					\
 				src/scene/scene_settings.c				\
 				src/text/text_destroy.c					\
