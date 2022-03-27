@@ -1,0 +1,13 @@
+USAGE
+    ./my_defender [map]
+
+DESCRIPTIONS
+    Defender game,
+
+MAP CREATION
+    ' ' = empty point
+    'x' = ennemy's start point
+    'o' = objectif to defend
+    '-' = horizontal road
+    '|' = vertical road
+    '/' = cross road
