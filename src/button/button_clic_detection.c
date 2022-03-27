@@ -36,6 +36,8 @@ int button_hovered(game_t *_gm, button_t *button)
     if (event->type == sfEvtMouseButtonPressed) {
         if (button->status != CLICKED && button->onClick != NULL) {
             button->status = CLICKED;
+            if (button->clic_sound)
+                sfMusic_play(button->clic_sound);
             button->onClick(_gm);
         }
     } else {
