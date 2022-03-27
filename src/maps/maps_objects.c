@@ -24,14 +24,14 @@ button_colors_t *map_block_create_colors(void)
 int block_is_border(sfIntRect *rect, block_type_t type)
 {
     switch (type) {
-        case BLOCK_BORDER_TOP: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_BOTTOM: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_LEFT: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_RIGHT: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_RT_CORNER: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_RB_CORNER: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_LT_CORNER: rect->left = 600; rect->top = 0; return 1;
-        case BLOCK_BORDER_LB_CORNER: rect->left = 600; rect->top = 0; return 1;
+        case BLOCK_BORDER_TOP: rect->left = 720; rect->top = 240; return 1;
+        case BLOCK_BORDER_BOTTOM: rect->left = 720; rect->top = 240; return 1;
+        case BLOCK_BORDER_LEFT: rect->left = 720; rect->top = 120; return 1;
+        case BLOCK_BORDER_RIGHT: rect->left = 720; rect->top = 0; return 1;
+        case BLOCK_BORDER_RT_CORNER: rect->left = 720; rect->top = 240; return 1;
+        case BLOCK_BORDER_RB_CORNER: rect->left = 720; rect->top = 240; return 1;
+        case BLOCK_BORDER_LT_CORNER: rect->left = 720; rect->top = 240; return 1;
+        case BLOCK_BORDER_LB_CORNER: rect->left = 720; rect->top = 240; return 1;
         default: return 0;
     }
 }

@@ -29,6 +29,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/in_game/ingame_menu.c				\
 				src/in_game/ingame_spawner.c			\
 				src/in_game/money_init.c				\
+				src/in_game/money_manager.c				\
 				src/maps/maps_block_click.c				\
 				src/maps/maps_load_blocks.c				\
 				src/maps/maps_objects.c					\
@@ -41,6 +42,7 @@ SRC			=	src/button/button_destroy.c				\
 				src/menu/menu_pause_display_buttons.c	\
 				src/parallax/parallax_create_layer.c	\
 				src/parallax/parallax_init_layer.c		\
+				src/scene/audio_manager.c				\
 				src/scene/scene_game.c					\
 				src/scene/scene_how_to.c				\
 				src/scene/scene_menu.c					\
