@@ -41,9 +41,30 @@ sfText *content, void *onClick)
     button->onClick = onClick;
     button->status = ACTIVE;
     button->dimension = dimension;
+    button->isSprite = false;
     sfRectangleShape_setFillColor(button->rect, color->normal);
     sfRectangleShape_setPosition(button->rect, *dimension->position);
     sfRectangleShape_setSize(button->rect, *dimension->size);
     button->text = content;
+    return button;
+}
+
+button_t *button_sprite_create(dimension_t *dimension, game_t *_gm,
+sfIntRect *rect, void *onClick)
+{
+    button_t *button = my_malloc(sizeof(button_t), NULL);
+
+    if (_gm == NULL || rect == NULL
+    || dimension == NULL)
+        return NULL;
+    if ((button->sprite = sfSprite_create()) == NULL)
+        return NULL;
+    button->onClick = onClick;
+    button->status = ACTIVE;
+    button->dimension = dimension;
+    button->isSprite = true;
+    sfSprite_setTexture(button->sprite, _gm->game_texture, sfFalse);
+    sfSprite_setTextureRect(button->sprite, *rect);
+    sfSprite_setPosition(button->sprite, *dimension->position);
     return button;
 }

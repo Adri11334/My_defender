@@ -12,6 +12,9 @@
         #include "my_defender.h"
     #endif /* !MY_DEFENDER_H_ */
 
+    #ifndef _STDBOOL_H
+        #include <stdbool.h>
+    #endif /* !_STDBOOL_H*/
 
     typedef struct button_colors_s {
         sfColor normal;
@@ -25,6 +28,14 @@
         sfVector2f *size;
         sfVector2f *position;
     } dimension_t;
+
+    typedef struct txt_img_s {
+        sfSprite *image;
+        sfIntRect *rect;
+        sfText *life_text;
+        dimension_t *dims;
+        int image_width;
+    } txt_img_t;
 
     typedef struct layer_s {
         int offset;
@@ -74,6 +85,10 @@
         dimension_t *actual_clicked_button;
         char *current_map;
         sfEvent event;
+        int money;
+        sfClock *money_clock;
+        float money_gap;
+        int money_by_gap;
     } game_t;
 
     typedef struct button_s {
@@ -81,6 +96,8 @@
         sfRectangleShape *rect;
         button_colors_t *colors;
         dimension_t *dimension;
+        sfSprite *sprite;
+        bool isSprite;
         sfText *text;
         void (*onClick) (game_t *_game_manager);
     } button_t;
