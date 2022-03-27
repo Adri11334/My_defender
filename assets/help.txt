@@ -4,8 +4,8 @@ USAGE
 DESCRIPTIONS
     Defender game, your goal is to defend your home from a golem invasion.
     To do so, you are able to buy tower defense on the map, to shot the golem.
-    Be aware that the more the time pass the golem will appear BUT do not worry
-    your money will to.
+    Be aware that the more the time pass the more the golem will appear BUT do
+    not worry your money will to.
     You can also create you own map.
     To do so, you need to create a file name mapx.txt (x is the number) in the
     map file, and use the totarial at the end :).
