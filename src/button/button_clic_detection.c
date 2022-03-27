@@ -15,9 +15,9 @@ int button_hover_detection(sfVector2i m_pos, button_t *button)
     (button->dimension->position->y + button->dimension->size->y);
 
     if (clic_from_right_border_x < 0 \
-    && ABSOLUTE(clic_from_right_border_x) < button->dimension->size->x) {
+     && ABSOLUTE(clic_from_right_border_x) < button->dimension->size->x) {
         if (clic_from_top_border_y < 0 \
-        && ABSOLUTE(clic_from_top_border_y) < button->dimension->size->y) {
+         && ABSOLUTE(clic_from_top_border_y) < button->dimension->size->y) {
             return 1;
         }
         return 0;

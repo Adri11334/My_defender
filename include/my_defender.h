@@ -6,7 +6,7 @@
 */
 
 #ifndef MY_DEFENDER_H_
-#define MY_DEFENDER_H_
+    #define MY_DEFENDER_H_
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
     #include  <stdlib.h>

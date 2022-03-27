@@ -6,7 +6,7 @@
 */
 
 #ifndef MY_ENUM_H_
-#define MY_ENUM_H_
+    #define MY_ENUM_H_
 
     typedef enum font_e {
         ROBOTO_LIGHT,
