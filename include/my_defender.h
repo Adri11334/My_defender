@@ -38,6 +38,8 @@
 
     button_t *button_create(dimension_t *dimension, button_colors_t *color, \
     sfText *content, void *onClick);
+    button_t *button_sprite_create(dimension_t *dimension, game_t *_gm, \
+    sfIntRect *rect, void *onClick);
     void button_display(game_t *_gm, button_t *button);
     void button_destroy(button_t *button);
 
@@ -47,6 +49,8 @@
     sfText *text_create(char *content, font_t font_wanted, int size, \
     dimension_t *parent_dimensions);
     void text_destroy(sfText *text);
+
+    sfFont *font_import(font_t font);
 
     void scene_menu_call(game_t *game_manager);
     void scene_game_call(game_t *game_manager);

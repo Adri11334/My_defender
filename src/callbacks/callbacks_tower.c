@@ -24,8 +24,13 @@ void add_update_earth_tower(game_t *_gm)
         map_block = map_block->next;
     }
     if ((*block)->tower == NULL)
-        (*block)->tower = tower_create(_gm->actual_clicked_button, \
-        EARTH_TOWER, _gm);
+        if (_gm->money >= 500) {
+            (*block)->tower = tower_create(_gm->actual_clicked_button, \
+            EARTH_TOWER, _gm);
+            _gm->money -= 500;
+        } else {
+            write_red("Not enought money\n");
+        }
     my_printf("-> earth tower is created\n");
 }
 
@@ -45,8 +50,13 @@ void add_update_sand_tower(game_t *_gm)
         map_block = map_block->next;
     }
     if ((*block)->tower == NULL)
-        (*block)->tower = tower_create(_gm->actual_clicked_button, \
-        SAND_TOWER, _gm);
+        if (_gm->money >= 750) {
+            (*block)->tower = tower_create(_gm->actual_clicked_button, \
+            SAND_TOWER, _gm);
+            _gm->money -= 750;
+        } else {
+            write_red("Not enought money\n");
+        }
     my_printf("-> sand tower is created\n");
 }
 
@@ -66,8 +76,13 @@ void add_update_ice_tower(game_t *_gm)
         map_block = map_block->next;
     }
     if ((*block)->tower == NULL)
-        (*block)->tower = tower_create(_gm->actual_clicked_button, \
-        ICE_TOWER, _gm);
+        if (_gm->money >= 1000) {
+            (*block)->tower = tower_create(_gm->actual_clicked_button, \
+            ICE_TOWER, _gm);
+            _gm->money -= 1000;
+        } else {
+            write_red("Not enought money\n");
+        }
     my_printf("-> ice tower is created\n");
 }
 
@@ -87,7 +102,12 @@ void add_update_fire_tower(game_t *_gm)
         map_block = map_block->next;
     }
     if ((*block)->tower == NULL)
-        (*block)->tower = tower_create(_gm->actual_clicked_button, \
-        FIRE_TOWER, _gm);
+        if (_gm->money >= 1250) {
+            (*block)->tower = tower_create(_gm->actual_clicked_button, \
+            FIRE_TOWER, _gm);
+            _gm->money -= 1250;
+        } else {
+            write_red("Not enought money\n");
+        }
     my_printf("-> fire tower is created\n");
 }
