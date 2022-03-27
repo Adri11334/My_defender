@@ -88,4 +88,4 @@
         FIRE_GOLEM,
     } ennemy_type_t;
 
-#endif /* !MY_ENUM_H_ */
+#endif/* !MY_ENUM_H_ */

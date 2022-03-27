@@ -15,9 +15,9 @@ int button_hover_detection(sfVector2i m_pos, button_t *button)
     (button->dimension->position->y + button->dimension->size->y);
 
     if (clic_from_right_border_x < 0 \
-     && ABSOLUTE(clic_from_right_border_x) < button->dimension->size->x) {
+    && ABSOLUTE(clic_from_right_border_x) < button->dimension->size->x) {
         if (clic_from_top_border_y < 0 \
-         && ABSOLUTE(clic_from_top_border_y) < button->dimension->size->y) {
+        && ABSOLUTE(clic_from_top_border_y) < button->dimension->size->y) {
             return 1;
         }
         return 0;
@@ -49,7 +49,7 @@ int button_is_hover(game_t *_gm, button_t *button)
     sfVector2i mouse_pos;
 
     if (_gm == NULL || button == NULL)
-        return;
+        return 84;
     mouse_pos = sfMouse_getPositionRenderWindow(_gm->window);
     if (button_hover_detection(mouse_pos, button) == 1) {
         return button_hovered(_gm, button);

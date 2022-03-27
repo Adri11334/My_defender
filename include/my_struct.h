@@ -10,11 +10,11 @@
 
     #ifndef MY_DEFENDER_H_
         #include "my_defender.h"
-    #endif /* !MY_DEFENDER_H_ */
+    #endif/* !MY_DEFENDER_H_ */
 
     #ifndef _STDBOOL_H
         #include <stdbool.h>
-    #endif /* !_STDBOOL_H*/
+    #endif/* !_STDBOOL_H*/
 
     typedef struct button_colors_s {
         sfColor normal;
@@ -126,6 +126,4 @@
         sfSprite *sprite;
     } map_block_t;
 
-
-
-#endif /* !MY_STRUCT_H_ */
+#endif/* !MY_STRUCT_H_ */

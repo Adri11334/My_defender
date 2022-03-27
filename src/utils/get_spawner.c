@@ -7,6 +7,21 @@
 
 #include "my_defender.h"
 
+static void spawner_pt_two(int *founded, int index, char *map, sfVector2f *pos)
+{
+    if (*founded != 0)
+        return;
+    if (map[index] == '\n') {
+        pos->x = 0;
+        pos->y++;
+    }
+    if (map[index] == 'x') {
+        *founded = 1;
+        return;
+    }
+    pos->x++;
+}
+
 sfVector2f *spawner_position(char *map)
 {
     sfVector2f *position = malloc(sizeof(sfVector2f));
@@ -19,17 +34,7 @@ sfVector2f *spawner_position(char *map)
     position->y = 0;
     while (map[index] != '\0') {
         index++;
-        if (founded != 0)
-            continue;
-        if (map[index] == '\n') {
-            position->x = 0;
-            position->y++;
-        }
-        if (map[index] == 'x') {
-            founded = 1;
-            continue;
-        }
-        position->x++;
+        spawner_pt_two(&founded, index, map, position);
     }
     return position;
 }

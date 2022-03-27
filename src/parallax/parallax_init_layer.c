@@ -13,7 +13,7 @@ void parallax_init_layer(game_t *_gm)
 
     dim = dimension_create(3840, 1080, 0, 0);
     if (!dim)
-        return NULL;
+        return;
     _gm->menu_scene->panels = \
     init_list(layer_create("./assets/parallax/1Ground.png", GROUND, dim, 14));
     push_node(&_gm->menu_scene->panels, \
