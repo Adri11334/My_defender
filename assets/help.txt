@@ -8,7 +8,7 @@ DESCRIPTIONS
     not worry your money will to.
     You can also create you own map.
     To do so, you need to create a file name mapx.txt (x is the number) in the
-    map file, and use the totarial at the end :).
+    map file, and use the tutorial at the end :).
     Here is a little summary of what you need to know about the game:
 
     The tower:
