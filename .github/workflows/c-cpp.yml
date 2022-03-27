@@ -1,0 +1,21 @@
+name: Compilation test
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+    - name: make lib
+      run: make lib
+    - name: make fclean
+      run: make fclean
