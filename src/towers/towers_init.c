@@ -42,7 +42,7 @@ int tower_set_damages(tower_type_t type, int tower_level)
     switch (type) {
         case EARTH_TOWER: return (tower_level * 5);
         case ICE_TOWER: return (tower_level  * 10);
-        case SAND_TOWER: return (tower_level * 10);
+        case SAND_TOWER: return (tower_level * 12);
         case FIRE_TOWER: return (tower_level * 20);
         default: return 0;
     }
