@@ -42,6 +42,7 @@ sfText *content, void *onClick)
     button->status = ACTIVE;
     button->dimension = dimension;
     button->isSprite = false;
+    button->clic_sound = create_audio("assets/audio/clic.wav", false);
     sfRectangleShape_setFillColor(button->rect, color->normal);
     sfRectangleShape_setPosition(button->rect, *dimension->position);
     sfRectangleShape_setSize(button->rect, *dimension->size);
@@ -63,6 +64,7 @@ sfIntRect *rect, void *onClick)
     button->status = ACTIVE;
     button->dimension = dimension;
     button->isSprite = true;
+    button->clic_sound = create_audio("assets/audio/tower.wav", false);
     sfSprite_setTexture(button->sprite, _gm->game_texture, sfFalse);
     sfSprite_setTextureRect(button->sprite, *rect);
     sfSprite_setPosition(button->sprite, *dimension->position);
