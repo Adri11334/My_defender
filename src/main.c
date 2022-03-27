@@ -13,7 +13,7 @@ int display_help(void)
 {
     char *text = NULL;
 
-    text = get_file_content("../assets/help.txt");
+    text = get_file_content("assets/help.txt");
     if (text != NULL)
         write(1, text, my_strlen(text));
     else
